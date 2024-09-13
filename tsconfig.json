@@ -1,0 +1,18 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "compilerOptions": {
+    /* Aliases */
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "@/*": ["src/*"] // Map @ to src
+    }
+  }
+}
