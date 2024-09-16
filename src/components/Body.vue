@@ -1,5 +1,24 @@
 <script setup lang="ts">
   import PaymentMethod from '@/components/PaymentMethod.vue';
+
+  const payments = [
+    'Картой РФ',
+    'Картой МИР',
+    'СБП',
+    'Payeer',
+    'SteamPay',
+    'Мегафон',
+    'Билайн',
+    'Теле2',
+    'PayPal',
+    'Stripe',
+    'FKWallet',
+    'Lava',
+    'Volet',
+    'PerfectMoney',
+    'Другой',
+    'Cryptomus',
+  ];
 </script>
 
 <template>
@@ -23,10 +42,13 @@
       />
     </div>
 
-    <PaymentMethod
-      :text="'Картой РФ'"
-      :image="'visa'"
-    />
+    <div class="grid grid-cols-5 gap-4 h-40 overflow-y-auto">
+      <PaymentMethod
+        v-for="payment in payments"
+        :key="payment"
+        :text="payment"
+      />
+    </div>
   </div>
 </template>
 

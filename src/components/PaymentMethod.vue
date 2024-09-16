@@ -3,15 +3,14 @@
 
   const props = defineProps<{
     text: string;
-    image: string;
   }>();
 
-  const imageLink = computed(() => `/images/payments/${props.image}.png`);
+  const imageLink = computed(() => `/images/payments/${props.text}.png`);
 </script>
 
 <template>
   <div
-    class="w-36 h-12 flex justify-start items-center border-0 rounded-md shadow-md"
+    class="w-36 h-12 flex justify-start items-center border-0 rounded-md shadow-sm"
   >
     <img
       class="w-8 mx-2"
