@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import PaymentMethod from '@/components/PaymentMethod.vue';
+  import { ref, type Ref } from 'vue';
 
   const payments = [
     'Картой РФ',
@@ -19,6 +20,14 @@
     'Другой',
     'Cryptomus',
   ];
+
+  // const money: Ref<number> | '' = '';
+  const money: Ref<number> | Ref<string> = ref('');
+  // const money = ref(0);
+
+  function setMoney(amount: number) {
+    money.value = amount;
+  }
 </script>
 
 <template>
@@ -49,6 +58,62 @@
         :text="payment"
       />
     </div>
+    <div class="flex items-center mt-2 text-sm font-medium">
+      <img
+        class="inline-block h-4 mr-1 pt-[2px]"
+        src="/images/Ex.png"
+      />
+      Внимание, при нажатии раскрывается информация про страны
+    </div>
+    <div class="mt-3">Укажите сумму платежа</div>
+    <input
+      v-model="money"
+      class="my-2 w-full shadow-xs border rounded-lg p-3 text-sm"
+      placeholder="Минимальная сумма платежа: 1.000₽"
+    />
+    <div class="inline-block font-medium text-xs text-zinc-500">
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(1000)"
+        value="1.000₽"
+      />
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(2000)"
+        value="2.000₽"
+      />
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(5000)"
+        value="5.000₽"
+      />
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(10000)"
+        value="10.000₽"
+      />
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(20000)"
+        value="20.000₽"
+      />
+      <input
+        class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+        type="button"
+        @click="setMoney(50000)"
+        value="50.000₽"
+      />
+    </div>
+    <input
+      class="w-full mt-4 bg-custom-4 border-0 rounded-xl py-3 text-gray-100"
+      type="button"
+      value="Оплатить"
+    />
   </div>
 </template>
 
