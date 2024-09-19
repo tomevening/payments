@@ -110,7 +110,7 @@
       />
     </div>
     <input
-      class="w-full mt-4 bg-custom-4 border-0 rounded-xl py-3 text-gray-100"
+      class="w-full my-4 bg-custom-4 border-0 rounded-xl py-3 text-gray-100"
       type="button"
       value="Оплатить"
     />
