@@ -21,9 +21,7 @@
     'Cryptomus',
   ];
 
-  // const money: Ref<number> | '' = '';
-  const money: Ref<number> | Ref<string> = ref('');
-  // const money = ref(0);
+  const money: Ref<number | ''> = ref('');
 
   function setMoney(amount: number) {
     money.value = amount;

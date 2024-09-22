@@ -23,7 +23,7 @@
           <div>API</div>
           <div>Временные номера для SMS</div>
         </div>
-        <div class="text-gray-400 text-3xl font-mono font-thin">|</div>
+        <div class="inline-block bg-gray-500 w-[1px] h-14 mt-[2px]"></div>
         <div
           class="flex items-center justify-center gap-3 text-gray-400 text-xs font-sans"
         >
