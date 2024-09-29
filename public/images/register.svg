@@ -1,0 +1,24 @@
+<svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2270_26959)">
+<path d="M10.25 8.90398C12.2713 8.90398 13.91 7.26535 13.91 5.24398C13.91 3.22262 12.2713 1.58398 10.25 1.58398C8.2286 1.58398 6.58997 3.22262 6.58997 5.24398C6.58997 7.26535 8.2286 8.90398 10.25 8.90398Z" stroke="url(#paint0_linear_2270_26959)" stroke-width="2.44" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.7036 18.6638H1.79651C2.38849 14.5251 5.94772 11.3438 10.25 11.3438C14.5523 11.3438 18.1116 14.5251 18.7036 18.6638Z" stroke="url(#paint1_linear_2270_26959)" stroke-width="2.44" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26.7203 6.46414C26.7203 5.79036 26.1739 5.24414 25.5003 5.24414C24.8265 5.24414 24.2803 5.79036 24.2803 6.46414V8.66014H22.0843C21.4105 8.66014 20.8643 9.20636 20.8643 9.88014C20.8643 10.5539 21.4105 11.1001 22.0843 11.1001H24.2803V13.2961C24.2803 13.9699 24.8265 14.5161 25.5003 14.5161C26.1739 14.5161 26.7203 13.9699 26.7203 13.2961V11.1001H28.9163C29.5899 11.1001 30.1363 10.5539 30.1363 9.88014C30.1363 9.20636 29.5899 8.66014 28.9163 8.66014H26.7203V6.46414Z" fill="url(#paint2_linear_2270_26959)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2270_26959" x1="14.685" y1="2.80398" x2="5.5659" y2="3.33093" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E2C299"/>
+<stop offset="1" stop-color="#C5A67C"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2270_26959" x1="19.1201" y1="12.5638" x2="1.08347" y2="14.5293" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E2C299"/>
+<stop offset="1" stop-color="#C5A67C"/>
+</linearGradient>
+<linearGradient id="paint2_linear_2270_26959" x1="29.7136" y1="7.56214" x2="21.0319" y2="8.09096" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E2C299"/>
+<stop offset="1" stop-color="#C5A67C"/>
+</linearGradient>
+<clipPath id="clip0_2270_26959">
+<rect width="31.72" height="19.52" fill="white" transform="translate(0.48999 0.363281)"/>
+</clipPath>
+</defs>
+</svg>

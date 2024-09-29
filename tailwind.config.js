@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{vue,ts}'],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
       colors: {
         custom: {
           1: '#2a2a2a',
