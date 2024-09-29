@@ -12,6 +12,7 @@ export default {
           2: '#393939',
           3: '#7a7c7f',
           4: '#caab81',
+          5: '#ABABAB',
         },
       },
     },
