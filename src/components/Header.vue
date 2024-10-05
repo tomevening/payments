@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-custom-1 py-[0.7175rem] px-10">
+  <div class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.7175rem] px-10">
     <div class="flex justify-between mx-auto max-w-[74.375rem]">
       <div class="flex items-center justify-start gap-[0.9375rem]">
         <div class="flex items-center justify-center">
@@ -72,9 +72,11 @@
     </div>
   </div>
 
-  <div class="bg-custom-2 py-[1.25rem] px-[0.9375rem]">
+  <div
+    class="bg-gradient-to-r from-dark-550 to-dark-400 py-[1.25rem] px-[0.9375rem]"
+  >
     <div
-      class="flex items-center justify-end gap-12 text-custom-5 font-roboto font-medium text-[0.9rem] mx-auto max-w-[74.375rem]"
+      class="flex items-center justify-end gap-12 text-dark-100 font-roboto text-[0.9rem] mx-auto max-w-[74.375rem]"
     >
       <div>Аренда номера от 1 дня</div>
       <div>Аренда на 20 минут</div>
