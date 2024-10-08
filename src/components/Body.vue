@@ -53,7 +53,7 @@
           class="h-[4.25rem] px-6 py-4 rounded-2xl relative flex items-center gap-[0.625rem] leading-none"
         >
           <div
-            class="absolute top-[0.1875rem] right-[0.1875rem] bg-gradient-to-r from-fulvous-600 to-fulvous-300 text-white py-[0.125rem] px-[0.375rem] rounded-full text-[0.526rem]"
+            class="absolute top-[0.1875rem] right-[0.1875rem] bg-gradient-to-r from-fulvous-600 to-fulvous-300 text-white py-[0.125rem] px-[0.375rem] rounded-full text-[0.625rem]"
           >
             Рекомендуем
           </div>
@@ -92,59 +92,71 @@
 
       <div class="text-xl mt-[1.875rem]">Выберите способ оплаты</div>
 
-      <div class="grid grid-cols-5 gap-4 h-40 overflow-y-auto mt-[0.3125rem]">
+      <div
+        class="grid grid-cols-5 gap-4 h-[13.375rem] overflow-y-auto mt-[0.3125rem]"
+      >
         <PaymentMethod
           v-for="payment in payments"
           :key="payment"
           :text="payment"
         />
       </div>
-      <div class="flex items-center mt-2 text-sm font-medium">
+      <div
+        class="flex items-center gap-[0.375rem] mt-[0.9375rem] text-sm font-medium"
+      >
         <img
-          class="inline-block h-4 mr-1 pt-[2px]"
+          class="h-[0.875rem]"
           src="/images/Ex.png"
         />
-        Внимание, при нажатии раскрывается информация про страны
+        <span>Внимание, при нажатии раскрывается информация про страны</span>
+        <img
+          class="h-[0.875rem] w-[0.875rem]"
+          src="/images/downArrow.svg"
+        />
       </div>
-      <div class="mt-3">Укажите сумму платежа</div>
+      <div class="mt-[1.875rem] text-xl text-dark-650">
+        Укажите сумму платежа
+      </div>
       <input
         v-model="money"
-        class="my-2 w-full shadow-xs border rounded-lg p-3 text-sm"
+        class="mt-[0.9375rem] w-full border border-transparent-10 rounded-xl py-4 pl-[1.25rem]"
         placeholder="Минимальная сумма платежа: 1.000₽"
       />
-      <div class="inline-block font-medium text-xs text-zinc-500">
+      <div
+        class="mt-[0.625rem] flex justify-start items-center gap-2.5 font-medium text-sm text-transparent-60"
+      >
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(1000)"
           value="1.000₽"
         />
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(2000)"
           value="2.000₽"
         />
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(5000)"
           value="5.000₽"
         />
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(10000)"
           value="10.000₽"
         />
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(20000)"
           value="20.000₽"
         />
         <input
-          class="mr-2 bg-neutral-100 border-0 rounded-xl px-2 py-1"
+          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
           type="button"
           @click="setMoney(50000)"
           value="50.000₽"
