@@ -29,7 +29,7 @@
 </script>
 
 <template>
-  <div class="px-10 my-10 font-roboto">
+  <div class="px-10 mt-10 font-roboto">
     <div class="mx-auto max-w-[74.375rem]">
       <div class="inline-block text-4xl font-bold">
         Пополните баланс,
@@ -162,8 +162,9 @@
           value="50.000₽"
         />
       </div>
+
       <input
-        class="w-full my-4 bg-custom-4 border-0 rounded-xl py-3 text-gray-100"
+        class="w-full bg-gradient-to-r from-fulvous-600 to-fulvous-300 mt-[1.875rem] mb-[6.25rem] border-0 rounded-xl font-medium text-xl py-5 text-white"
         type="button"
         value="Оплатить"
       />
