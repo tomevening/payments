@@ -1,33 +1,39 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="bg-black py-7">
-    <div class="mx-auto w-8/12 flex justify-between items-center">
-      <div class="flex items-start justify-center gap-4">
-        <img
-          class="h-7 inline-block"
-          src="/images/SMS.png"
-        />
-        <div class="text-gray-100 text-lg font-semibold">SMS SERVICE</div>
-        <div class="inline-block bg-gray-400 w-[1.5px] h-8 mt-[2px]"></div>
-        <div class="text-gray-100 text-xs font-sans">
-          АРЕНДА НОМЕРА <br />
-          ДЛЯ ПРИЁМА SMS
+  <div class="bg-black py-6 font-roboto">
+    <div
+      class="mx-auto max-w-[74.375rem] flex justify-between items-center px-[0.3rem]"
+    >
+      <div class="flex items-center justify-start gap-[1.125rem] py-[0.9rem]">
+        <div class="flex items-center gap-[0.625rem]">
+          <img
+            class="size-8"
+            src="/images/SMS.svg"
+          />
+          <div class="text-gray-100 text-lg font-medium tracking-[0.175rem]">
+            SMS SERVICE
+          </div>
+        </div>
+        <div class="bg-white w-[0.0625rem] h-[1.875rem]"></div>
+        <div class="text-white text-[0.6rem] tracking-[0.0781rem] font-light">
+          АРЕНДА НОМЕРА ДЛЯ <br />ПРИЁМА SMS
         </div>
       </div>
-      <div class="flex justify-end items-center gap-6 text-white text-xs">
-        <div class="flex flex-col items-center gap-[2px]">
+
+      <div class="flex justify-end items-center gap-8 text-white text-sm">
+        <div class="flex flex-col items-center gap-[0.2275rem] py-2">
           <img
-            class="h-4"
+            class="h-[1.3125rem]"
             src="/images/Login.png"
           />
           Авторизация
         </div>
-        <div class="inline-block bg-gray-400 w-[1px] h-14 mt-[2px]"></div>
+        <div class="bg-dark-200 w-[0.0625rem] h-[3.8125rem]"></div>
 
-        <div class="flex flex-col items-center gap-[2px]">
+        <div class="flex flex-col items-center gap-[0.2275rem] py-2">
           <img
-            class="h-4"
+            class="h-[1.3125rem]"
             src="/images/Register.png"
           />
           Регистрация
@@ -35,9 +41,13 @@
       </div>
     </div>
   </div>
-  <div class="bg-zinc-600 h-[1px]"></div>
-  <div class="bg-black py-7 text-neutral-400 font-medium">
-    <div class="mx-auto w-8/12 grid grid-cols-4 gap-4">
+  <div class="bg-dark-350 h-[0.0625rem]"></div>
+  <div
+    class="bg-black py-7 px-[0.3rem] text-dark-100 font-medium text-[0.8rem]"
+  >
+    <div
+      class="mx-auto max-w-[74.375rem] grid gap-y-[0.5937rem] gap-x-[2.9244rem] grid-flow-col grid-rows-4"
+    >
       <div>Цены на номера</div>
       <div>Скидки на номера</div>
       <div>Долгосрочная аренда</div>
@@ -54,8 +64,8 @@
       <div>Вопросы и ответы</div>
     </div>
   </div>
-  <div class="bg-zinc-600 h-[1px]"></div>
-  <div class="bg-black py-3 text-neutral-400 flex justify-center">
+  <div class="bg-dark-350 h-[0.0625rem]"></div>
+  <div class="bg-black py-2 text-dark-50 text-[0.625rem] flex justify-center">
     SMS SERVICE support@sms-activation-service.com | LLP "Opejs" 231040000683
   </div>
 </template>

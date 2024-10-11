@@ -8,7 +8,7 @@
       <div class="flex items-center justify-start gap-[0.9375rem]">
         <div class="flex items-center justify-center">
           <img
-            class="w-8 h-8 inline-block mr-[0.625rem]"
+            class="size-8 inline-block mr-[0.625rem]"
             src="/images/SMS.svg"
           />
           <div
