@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import PaymentMethod from '@/components/PaymentMethod.vue';
+  import PaymentTemplate from '@/components/PaymentTemplate.vue';
   import { ref, type Ref } from 'vue';
 
   const payments = [
@@ -20,18 +21,19 @@
     'Другой',
     'Cryptomus',
   ];
-
   const money: Ref<number | ''> = ref('');
 
+  const templates = [1, 2, 5, 10, 20, 50];
+
   function setMoney(amount: number) {
-    money.value = amount;
+    money.value = amount * 1000;
   }
 </script>
 
 <template>
   <div class="px-10 mt-10 font-roboto">
     <div class="mx-auto max-w-[74.375rem]">
-      <div class="inline-block text-4xl font-bold">
+      <div class="text-4xl font-bold">
         Пополните баланс,
         <span class="text-dark-300 font-medium">
           чтобы получить номер для приёма смс
@@ -39,12 +41,13 @@
       </div>
 
       <div class="mt-[1.875rem] text-xl flex items-center gap-[0.1875rem]">
-        <span>Выберите валюту оплаты</span>
-        <span
-          ><img
+        <div>Выберите валюту оплаты</div>
+        <div>
+          <img
             class="h-[0.875rem] ml-[0.5312rem]"
             src="/images/Question.svg"
-        /></span>
+          />
+        </div>
       </div>
 
       <div class="flex justify-start items-center gap-4 mt-[0.9375rem]">
@@ -108,7 +111,7 @@
           class="h-[0.875rem]"
           src="/images/Ex.png"
         />
-        <span>Внимание, при нажатии раскрывается информация про страны</span>
+        <div>Внимание, при нажатии раскрывается информация про страны</div>
         <img
           class="h-[0.875rem] w-[0.875rem]"
           src="/images/downArrow.svg"
@@ -125,41 +128,11 @@
       <div
         class="mt-[0.625rem] flex justify-start items-center gap-2.5 font-medium text-sm text-transparent-60"
       >
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(1000)"
-          value="1.000₽"
-        />
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(2000)"
-          value="2.000₽"
-        />
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(5000)"
-          value="5.000₽"
-        />
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(10000)"
-          value="10.000₽"
-        />
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(20000)"
-          value="20.000₽"
-        />
-        <input
-          class="bg-transparent-4 border-0 rounded-[0.625rem] px-3 py-2"
-          type="button"
-          @click="setMoney(50000)"
-          value="50.000₽"
+        <PaymentTemplate
+          :sum="template"
+          @choose-sum="setMoney"
+          v-for="template in templates"
+          :key="template"
         />
       </div>
 

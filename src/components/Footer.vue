@@ -1,4 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import type { Link } from '@/types';
+
+  const footerLinks: Link[] = [
+    { text: 'Цены на номера', address: 'http://localhost:5173/' },
+    { text: 'Скидки на номера', address: 'http://localhost:5173/' },
+    { text: 'Долгосрочная аренда', address: 'http://localhost:5173/' },
+    { text: 'Беслпатные номера', address: 'http://localhost:5173/' },
+    { text: 'API подключение', address: 'http://localhost:5173/' },
+    { text: 'Реферальная программа', address: 'http://localhost:5173/' },
+    { text: 'Владельцем софта', address: 'http://localhost:5173/' },
+    { text: 'Новости сервиса', address: 'http://localhost:5173/' },
+    { text: 'Политика конфиденциальности', address: 'http://localhost:5173/' },
+    { text: 'Политика доставки', address: 'http://localhost:5173/' },
+    { text: 'Политика возврата', address: 'http://localhost:5173/' },
+    { text: 'Условия оказания услуг', address: 'http://localhost:5173/' },
+    { text: 'Связаться с поддержкой', address: 'http://localhost:5173/' },
+    { text: 'Вопросы и ответы', address: 'http://localhost:5173/' },
+  ];
+</script>
 
 <template>
   <div class="bg-black py-6 font-roboto">
@@ -22,22 +41,28 @@
       </div>
 
       <div class="flex justify-end items-center gap-8 text-white text-sm">
-        <div class="flex flex-col items-center gap-[0.2275rem] py-2">
+        <a
+          href="http://localhost:5173/"
+          class="flex flex-col items-center gap-[0.2275rem] py-2"
+        >
           <img
             class="h-[1.3125rem]"
             src="/images/Login.png"
           />
           Авторизация
-        </div>
+        </a>
         <div class="bg-dark-200 w-[0.0625rem] h-[3.8125rem]"></div>
 
-        <div class="flex flex-col items-center gap-[0.2275rem] py-2">
+        <a
+          href="http://localhost:5173/"
+          class="flex flex-col items-center gap-[0.2275rem] py-2"
+        >
           <img
             class="h-[1.3125rem]"
             src="/images/Register.png"
           />
           Регистрация
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -48,20 +73,12 @@
     <div
       class="mx-auto max-w-[74.375rem] grid gap-y-[0.5937rem] gap-x-[2.9244rem] grid-flow-col grid-rows-4"
     >
-      <div>Цены на номера</div>
-      <div>Скидки на номера</div>
-      <div>Долгосрочная аренда</div>
-      <div>Беслпатные номера</div>
-      <div>API подключение</div>
-      <div>Реферальная программа</div>
-      <div>Владельцем софта</div>
-      <div>Новости сервиса</div>
-      <div>Политика конфиденциальности</div>
-      <div>Политика доставки</div>
-      <div>Политика возврата</div>
-      <div>Условия оказания услуг</div>
-      <div>Связаться с поддержкой</div>
-      <div>Вопросы и ответы</div>
+      <a
+        v-for="link in footerLinks"
+        key="text"
+        :href="link.address"
+        >{{ link.text }}</a
+      >
     </div>
   </div>
   <div class="bg-dark-350 h-[0.0625rem]"></div>
