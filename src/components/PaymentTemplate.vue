@@ -9,7 +9,11 @@
     (event: 'chooseSum', sum: number): void;
   }>();
 
-  const prettierSum = computed(() => `${props.sum}.000₽`);
+  const prettierSum = computed(() => {
+    return new Intl.NumberFormat('de').format(props.sum) + '₽';
+    // const formattedNumber = new Intl.NumberFormat('de').format(props.sum);
+    // return formattedNumber + '₽';
+  });
 </script>
 
 <template>

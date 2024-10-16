@@ -1,11 +1,10 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
-
-  const props = defineProps<{
+  defineProps<{
     text: string;
+    srcIcon: string;
   }>();
 
-  const imageLink = computed(() => `/images/payments/${props.text}.png`);
+  // const imageLink = computed(() => `/images/payments/${props.text}.png`);
 </script>
 
 <template>
@@ -14,7 +13,7 @@
   >
     <img
       class="w-12 ml-5"
-      :src="imageLink"
+      :src="srcIcon"
     />
     <div class="flex flex-col gap-[0.1875rem]">
       <div class="font-medium whitespace-nowrap text-dark-650">

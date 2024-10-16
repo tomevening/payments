@@ -1,32 +1,81 @@
 <script setup lang="ts">
   import PaymentMethod from '@/components/PaymentMethod.vue';
   import PaymentTemplate from '@/components/PaymentTemplate.vue';
+  import { type PaymentMethod as PaymentMethodType } from '@/types';
   import { ref, type Ref } from 'vue';
 
-  const payments = [
-    'Картой РФ',
-    'Картой МИР',
-    'СБП',
-    'Payeer',
-    'SteamPay',
-    'Мегафон',
-    'Билайн',
-    'Теле2',
-    'PayPal',
-    'Stripe',
-    'FKWallet',
-    'Lava',
-    'Volet',
-    'PerfectMoney',
-    'Другой',
-    'Cryptomus',
+  const payments: PaymentMethodType[] = [
+    {
+      name: 'Картой РФ',
+      srcIcon: '/images/payments/RUCard.png',
+    },
+    {
+      name: 'Картой МИР',
+      srcIcon: '/images/payments/MirCard.png',
+    },
+    {
+      name: 'СБП',
+      srcIcon: '/images/payments/СБП.png',
+    },
+    {
+      name: 'Payeer',
+      srcIcon: '/images/payments/Payeer.png',
+    },
+    {
+      name: 'SteamPay',
+      srcIcon: '/images/payments/SteamPay.png',
+    },
+    {
+      name: 'Мегафон',
+      srcIcon: '/images/payments/Мегафон.png',
+    },
+    {
+      name: 'Билайн',
+      srcIcon: '/images/payments/Билайн.png',
+    },
+    {
+      name: 'Теле2',
+      srcIcon: '/images/payments/Теле2.png',
+    },
+    {
+      name: 'PayPal',
+      srcIcon: '/images/payments/PayPal.png',
+    },
+    {
+      name: 'Stripe',
+      srcIcon: '/images/payments/Stripe.png',
+    },
+    {
+      name: 'FKWallet',
+      srcIcon: '/images/payments/FKWallet.png',
+    },
+    {
+      name: 'Lava',
+      srcIcon: '/images/payments/Lava.png',
+    },
+    {
+      name: 'Volet',
+      srcIcon: '/images/payments/Volet.png',
+    },
+    {
+      name: 'PerfectMoney',
+      srcIcon: '/images/payments/PerfectMoney.png',
+    },
+    {
+      name: 'Другой',
+      srcIcon: '/images/payments/Other.png',
+    },
+    {
+      name: 'Cryptomus',
+      srcIcon: '/images/payments/Cryptomus.png',
+    },
   ];
   const money: Ref<number | ''> = ref('');
 
-  const templates = [1, 2, 5, 10, 20, 50];
+  const templates = [1000, 2000, 5000, 10000, 20000, 50000];
 
   function setMoney(amount: number) {
-    money.value = amount * 1000;
+    money.value = amount;
   }
 </script>
 
@@ -100,8 +149,9 @@
       >
         <PaymentMethod
           v-for="payment in payments"
-          :key="payment"
-          :text="payment"
+          :key="payment.name"
+          :text="payment.name"
+          :srcIcon="payment.srcIcon"
         />
       </div>
       <div

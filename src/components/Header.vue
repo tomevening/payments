@@ -20,18 +20,20 @@
   <div class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.7175rem] px-10">
     <div class="flex justify-between mx-auto max-w-[74.375rem]">
       <div class="flex items-center justify-start gap-[0.9375rem]">
-        <div class="flex items-center justify-center">
+        <a
+          href="http://localhost:5173/"
+          class="flex items-center justify-center"
+        >
           <img
             class="size-8 mr-[0.625rem]"
             src="/images/SMS.svg"
           />
-          <a
-            href="http://localhost:5173/"
+          <div
             class="text-white text-[1rem] tracking-[0.075rem] font-medium font-roboto"
           >
             SMS SERVICE
-          </a>
-        </div>
+          </div>
+        </a>
 
         <div
           class="bg-gray-400 w-[0.0625rem] h-[1.875rem] pb-[0.0431rem]"
@@ -43,7 +45,7 @@
           ДЛЯ ПРИЕМА СМС
         </div>
       </div>
-      <div class="flex items-center justify-left gap-3">
+      <div class="flex items-center justify-left gap-4">
         <div
           class="flex items-center justify-center gap-8 text-neutral-400 text-[0.8125rem] font-roboto"
         >
