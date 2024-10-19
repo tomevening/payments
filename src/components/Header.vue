@@ -14,26 +14,31 @@
     { text: 'API', address: 'http://localhost:5173/' },
     { text: 'Служба поддержки', address: 'http://localhost:5173/' },
   ];
+
+  const bottomHeaderLinksMobile: Link[] = [
+    { text: 'Купить номер', address: 'http://localhost:5173/' },
+    { text: 'История транзакций', address: 'http://localhost:5173/' },
+  ];
 </script>
 
 <template>
-  <div class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.7175rem] px-10">
+  <div
+    class="bg-gradient-to-r from-dark-900 to-dark-600 sm:py-[0.7175rem] sm:px-10 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem]"
+  >
     <div class="flex justify-between mx-auto max-w-[74.375rem]">
       <div class="flex items-center justify-start gap-[0.9375rem]">
-        <a
-          href="http://localhost:5173/"
-          class="flex items-center justify-center"
-        >
+        <div class="flex items-center justify-center">
           <img
             class="size-8 mr-[0.625rem]"
             src="/images/SMS.svg"
           />
-          <div
+          <a
+            href="http://localhost:5173/"
             class="text-white text-[1rem] tracking-[0.075rem] font-medium font-roboto"
           >
             SMS SERVICE
-          </div>
-        </a>
+          </a>
+        </div>
 
         <div
           class="bg-gray-400 w-[0.0625rem] h-[1.875rem] pb-[0.0431rem]"
@@ -45,7 +50,16 @@
           ДЛЯ ПРИЕМА СМС
         </div>
       </div>
-      <div class="flex items-center justify-left gap-4">
+      <a
+        class="sm:hidden py-[0.3125rem] px-[0.8125rem] border rounded border-transparent-10"
+        href="http://localhost:5173/"
+      >
+        <img
+          src="/images/menu.svg"
+          class="size-[1.875rem]"
+        />
+      </a>
+      <div class="hidden sm:flex sm:items-center sm:justify-left sm:gap-4">
         <div
           class="flex items-center justify-center gap-8 text-neutral-400 text-[0.8125rem] font-roboto"
         >
@@ -98,14 +112,24 @@
   </div>
 
   <div
-    class="bg-gradient-to-r from-dark-550 to-dark-400 py-[1.25rem] px-[0.9375rem]"
+    class="bg-gradient-to-r from-dark-550 to-dark-400 py-[0.625rem] px-[1.9375rem] text-dark-100 font-roboto sm:py-[1.25rem] sm:px-[0.9375rem]"
   >
     <div
-      class="flex items-center justify-end gap-12 text-dark-100 font-roboto text-[0.9rem] mx-auto max-w-[74.375rem]"
+      class="sm:hidden flex items-center gap-[1.8925rem] font-medium text-[0.8125rem]"
+    >
+      <a
+        v-for="link in bottomHeaderLinksMobile"
+        :key="link.text"
+        :href="link.address"
+        >{{ link.text }}</a
+      >
+    </div>
+    <div
+      class="hidden sm:flex items-center justify-end gap-12 text-[0.9rem] mx-auto max-w-[74.375rem]"
     >
       <a
         v-for="link in bottomHeaderLinks"
-        key="text"
+        :key="link.text"
         :href="link.address"
         >{{ link.text }}</a
       >
