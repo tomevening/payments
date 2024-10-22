@@ -80,32 +80,36 @@
 </script>
 
 <template>
-  <div class="px-10 mt-10 font-roboto">
+  <div class="px-[0.9375rem] py-[1.5625rem] font-roboto sm:mt-10 sm:px-10">
     <div class="mx-auto max-w-[74.375rem]">
-      <div class="text-4xl font-bold">
+      <div class="text-lg font-bold sm:text-4xl">
         Пополните баланс,
-        <span class="text-dark-300 font-medium">
+        <span class="font-medium text-dark-300">
           чтобы получить номер для приёма смс
         </span>
       </div>
 
-      <div class="mt-[1.875rem] text-xl flex items-center gap-[0.1875rem]">
+      <div
+        class="mt-[0.9375rem] flex items-center gap-[0.1875rem] text-sm sm:mt-[1.875rem] sm:text-xl"
+      >
         <div>Выберите валюту оплаты</div>
         <div>
           <img
-            class="h-[0.875rem] ml-[0.5312rem]"
+            class="ml-[0.5312rem] hidden h-[0.875rem] sm:inline-block"
             src="/images/Question.svg"
           />
         </div>
       </div>
 
-      <div class="flex justify-start items-center gap-4 mt-[0.9375rem]">
+      <div
+        class="mt-[0.625rem] inline-flex flex-col justify-start gap-[0.875rem] sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4"
+      >
         <div
           style="box-shadow: 0px 0px 15px 0px #0000000f"
-          class="h-[4.25rem] px-6 py-4 rounded-2xl relative flex items-center gap-[0.625rem] leading-none"
+          class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"
         >
           <div
-            class="absolute top-[0.1875rem] right-[0.1875rem] bg-gradient-to-r from-fulvous-600 to-fulvous-300 text-white py-[0.125rem] px-[0.375rem] rounded-full text-[0.625rem]"
+            class="absolute right-[0.1875rem] top-[0.1875rem] rounded-full bg-gradient-to-r from-fulvous-600 to-fulvous-300 px-[0.3125rem] py-[0.125rem] text-[0.5625rem] text-white sm:px-[0.375rem] sm:text-[0.625rem]"
           >
             Рекомендуем
           </div>
@@ -114,20 +118,22 @@
             class="h-6 w-6"
             src="/images/Bitcoin.svg"
           />
-          Криптовалюты
+          <div class="text-[0.8125rem] sm:text-sm">Криптовалюты</div>
         </div>
         <div
           style="box-shadow: 0px 0px 15px 0px #0000000f"
-          class="h-[4.25rem] px-6 py-4 rounded-2xl relative flex items-center gap-[1.25rem] leading-none"
+          class="text-[0.8125rem relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm"
         >
-          <div class="font-medium flex items-center gap-3">
+          <div class="flex items-center gap-3 font-medium">
             <img
               class="size-[1.75rem]"
               src="/images/flagRound.svg"
             />
             RUB
           </div>
-          <div class="bg-transparent-10 w-[0.0625rem] h-[3.25rem]"></div>
+          <div
+            class="h-10 w-[0.0625rem] bg-transparent-10 sm:h-[3.25rem]"
+          ></div>
           <div class="flex items-center gap-[0.75rem]">
             <img
               class="h-6 w-6"
@@ -142,10 +148,12 @@
         </div>
       </div>
 
-      <div class="text-xl mt-[1.875rem]">Выберите способ оплаты</div>
+      <div class="mt-[1.25rem] text-sm sm:mt-[1.875rem] sm:text-xl">
+        Выберите способ оплаты
+      </div>
 
       <div
-        class="grid grid-cols-5 gap-4 h-[13.375rem] overflow-y-auto mt-[0.3125rem]"
+        class="mt-[0.3125rem] grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-auto sm:h-[13.375rem] sm:grid-cols-5"
       >
         <PaymentMethod
           v-for="payment in payments"
@@ -155,28 +163,30 @@
         />
       </div>
       <div
-        class="flex items-center gap-[0.375rem] mt-[0.9375rem] text-sm font-medium"
+        class="mt-[0.625rem] flex items-center gap-[0.375rem] text-xs font-medium sm:mt-[0.9375rem] sm:text-sm"
       >
         <img
-          class="h-[0.875rem]"
+          class="size-[0.875rem]"
           src="/images/Ex.png"
         />
         <div>Внимание, при нажатии раскрывается информация про страны</div>
         <img
-          class="h-[0.875rem] w-[0.875rem]"
+          class="size-[0.875rem]"
           src="/images/downArrow.svg"
         />
       </div>
-      <div class="mt-[1.875rem] text-xl text-dark-650">
+      <div
+        class="mt-[1.25rem] text-sm text-dark-650 sm:mt-[1.875rem] sm:text-xl"
+      >
         Укажите сумму платежа
       </div>
       <input
         v-model="money"
-        class="mt-[0.9375rem] w-full border border-transparent-10 rounded-xl py-4 pl-[1.25rem]"
+        class="mt-[0.625rem] w-full rounded-lg border border-transparent-10 p-4 sm:mt-[0.9375rem] sm:rounded-xl sm:px-[1.25rem] sm:py-4"
         placeholder="Минимальная сумма платежа: 1.000₽"
       />
       <div
-        class="mt-[0.625rem] flex justify-start items-center gap-2.5 font-medium text-sm text-transparent-60"
+        class="mt-[0.625rem] flex items-center justify-start gap-2.5 text-sm font-medium text-transparent-60"
       >
         <PaymentTemplate
           :sum="template"
@@ -187,7 +197,7 @@
       </div>
 
       <input
-        class="w-full bg-gradient-to-r from-fulvous-600 to-fulvous-300 mt-[1.875rem] mb-[6.25rem] border-0 rounded-xl font-medium text-xl py-5 text-white"
+        class="mb-[6.25rem] mt-[1.875rem] w-full rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:text-xl"
         type="button"
         value="Оплатить"
       />

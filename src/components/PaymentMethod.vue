@@ -9,17 +9,19 @@
 
 <template>
   <div
-    class="h-[4.25rem] flex justify-start items-center gap-3 border-0 rounded-xl shadow-sm"
+    class="flex items-center justify-start gap-[0.375rem] rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm sm:gap-3 sm:rounded-xl sm:px-[0.625rem] sm:py-[0.75rem]"
   >
     <img
-      class="w-12 ml-5"
+      class="w-9 sm:w-12"
       :src="srcIcon"
     />
-    <div class="flex flex-col gap-[0.1875rem]">
-      <div class="font-medium whitespace-nowrap text-dark-650">
+    <div class="flex flex-col gap-[0.125rem] sm:gap-[0.1875rem]">
+      <div
+        class="whitespace-nowrap text-[0.8215rem] font-medium text-dark-650 sm:text-base"
+      >
         {{ text }}
       </div>
-      <div class="text-[0.8125rem] whitespace-nowrap">
+      <div class="whitespace-nowrap text-[0.6875rem] sm:text-[0.8125rem]">
         <span class="text-dark-300">Комиссия: </span>
         <span class="font-medium">8%</span>
       </div>

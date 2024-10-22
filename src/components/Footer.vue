@@ -22,7 +22,7 @@
 <template>
   <div class="bg-black py-6 font-roboto">
     <div
-      class="mx-auto max-w-[74.375rem] flex justify-between items-center px-[0.3rem]"
+      class="mx-auto flex max-w-[74.375rem] items-center justify-between px-[0.3rem]"
     >
       <div class="flex items-center justify-start gap-[1.125rem] py-[0.9rem]">
         <div class="flex items-center gap-[0.625rem]">
@@ -30,17 +30,17 @@
             class="size-8"
             src="/images/SMS.svg"
           />
-          <div class="text-gray-100 text-lg font-medium tracking-[0.175rem]">
+          <div class="text-lg font-medium tracking-[0.175rem] text-gray-100">
             SMS SERVICE
           </div>
         </div>
-        <div class="bg-white w-[0.0625rem] h-[1.875rem]"></div>
-        <div class="text-white text-[0.6rem] tracking-[0.0781rem] font-light">
+        <div class="h-[1.875rem] w-[0.0625rem] bg-white"></div>
+        <div class="text-[0.6rem] font-light tracking-[0.0781rem] text-white">
           АРЕНДА НОМЕРА ДЛЯ <br />ПРИЁМА SMS
         </div>
       </div>
 
-      <div class="flex justify-end items-center gap-8 text-white text-sm">
+      <div class="flex items-center justify-end gap-8 text-sm text-white">
         <a
           href="http://localhost:5173/"
           class="flex flex-col items-center gap-[0.2275rem] py-2"
@@ -51,7 +51,7 @@
           />
           Авторизация
         </a>
-        <div class="bg-dark-200 w-[0.0625rem] h-[3.8125rem]"></div>
+        <div class="h-[3.8125rem] w-[0.0625rem] bg-dark-200"></div>
 
         <a
           href="http://localhost:5173/"
@@ -66,12 +66,12 @@
       </div>
     </div>
   </div>
-  <div class="bg-dark-350 h-[0.0625rem]"></div>
+  <div class="h-[0.0625rem] bg-dark-350"></div>
   <div
-    class="bg-black py-7 px-[0.3rem] text-dark-100 font-medium text-[0.8rem]"
+    class="bg-black px-[0.3rem] py-7 text-[0.8rem] font-medium text-dark-100"
   >
     <div
-      class="mx-auto max-w-[74.375rem] grid gap-y-[0.5937rem] gap-x-[2.9244rem] grid-flow-col grid-rows-4"
+      class="mx-auto grid max-w-[74.375rem] grid-flow-col grid-rows-4 gap-x-[2.9244rem] gap-y-[0.5937rem]"
     >
       <a
         v-for="link in footerLinks"
@@ -81,8 +81,8 @@
       >
     </div>
   </div>
-  <div class="bg-dark-350 h-[0.0625rem]"></div>
-  <div class="bg-black py-2 text-dark-50 text-[0.625rem] flex justify-center">
+  <div class="h-[0.0625rem] bg-dark-350"></div>
+  <div class="flex justify-center bg-black py-2 text-[0.625rem] text-dark-50">
     SMS SERVICE support@sms-activation-service.com | LLP "Opejs" 231040000683
   </div>
 </template>

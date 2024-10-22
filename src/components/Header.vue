@@ -23,35 +23,35 @@
 
 <template>
   <div
-    class="bg-gradient-to-r from-dark-900 to-dark-600 sm:py-[0.7175rem] sm:px-10 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem]"
+    class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:px-10 sm:py-[0.7175rem]"
   >
-    <div class="flex justify-between mx-auto max-w-[74.375rem]">
+    <div class="mx-auto flex max-w-[74.375rem] justify-between">
       <div class="flex items-center justify-start gap-[0.9375rem]">
         <div class="flex items-center justify-center">
           <img
-            class="size-8 mr-[0.625rem]"
+            class="mr-[0.625rem] size-8"
             src="/images/SMS.svg"
           />
           <a
             href="http://localhost:5173/"
-            class="text-white text-[1rem] tracking-[0.075rem] font-medium font-roboto"
+            class="font-roboto text-[1rem] font-medium tracking-[0.075rem] text-white"
           >
             SMS SERVICE
           </a>
         </div>
 
         <div
-          class="bg-gray-400 w-[0.0625rem] h-[1.875rem] pb-[0.0431rem]"
+          class="h-[1.875rem] w-[0.0625rem] bg-gray-400 pb-[0.0431rem]"
         ></div>
         <div
-          class="text-white text-[0.6rem] font-roboto pb-[0.0431rem] tracking-[0.0781rem]"
+          class="pb-[0.0431rem] font-roboto text-[0.6rem] tracking-[0.0781rem] text-white"
         >
           АРЕНДА НОМЕРА <br />
           ДЛЯ ПРИЕМА СМС
         </div>
       </div>
       <a
-        class="sm:hidden py-[0.3125rem] px-[0.8125rem] border rounded border-transparent-10"
+        class="rounded border border-transparent-10 px-[0.8125rem] py-[0.3125rem] sm:hidden"
         href="http://localhost:5173/"
       >
         <img
@@ -59,9 +59,9 @@
           class="size-[1.875rem]"
         />
       </a>
-      <div class="hidden sm:flex sm:items-center sm:justify-left sm:gap-4">
+      <div class="sm:justify-left hidden sm:flex sm:items-center sm:gap-4">
         <div
-          class="flex items-center justify-center gap-8 text-neutral-400 text-[0.8125rem] font-roboto"
+          class="flex items-center justify-center gap-8 font-roboto text-[0.8125rem] text-neutral-400"
         >
           <a
             v-for="link in topHeaderLinks"
@@ -70,13 +70,13 @@
             >{{ link.text }}</a
           >
         </div>
-        <div class="bg-zinc-500 w-[0.06225rem] h-[3.4537rem]"></div>
+        <div class="h-[3.4537rem] w-[0.06225rem] bg-zinc-500"></div>
         <div
-          class="flex items-center justify-center text-neutral-400 text-[0.8125rem] font-sans"
+          class="flex items-center justify-center font-sans text-[0.8125rem] text-neutral-400"
         >
           <a
             href="http://localhost:5173/"
-            class="flex flex-col items-center gap-[2px] mx-4"
+            class="mx-4 flex flex-col items-center gap-[2px]"
           >
             <img
               class="h-[1.22rem]"
@@ -87,7 +87,7 @@
 
           <a
             href="http://localhost:5173/"
-            class="flex flex-col items-center gap-[2px] mx-4"
+            class="mx-4 flex flex-col items-center gap-[2px]"
           >
             <img
               class="h-[1.22rem]"
@@ -97,14 +97,14 @@
           </a>
           <a
             href="http://localhost:5173/"
-            class="bg-zinc-500 rounded-[0.3125rem] flex items-center justify-center gap-2 px-2 py-3"
+            class="flex items-center justify-center gap-2 rounded-[0.3125rem] bg-zinc-500 px-2 py-3"
           >
             <img
               class="h-4"
               src="/images/flag.svg"
             />
             <div class="text-white">RU</div>
-            <div class="bg-white h-2 w-2"></div>
+            <div class="h-2 w-2 bg-white"></div>
           </a>
         </div>
       </div>
@@ -112,10 +112,10 @@
   </div>
 
   <div
-    class="bg-gradient-to-r from-dark-550 to-dark-400 py-[0.625rem] px-[1.9375rem] text-dark-100 font-roboto sm:py-[1.25rem] sm:px-[0.9375rem]"
+    class="bg-gradient-to-r from-dark-550 to-dark-400 px-[1.9375rem] py-[0.625rem] font-roboto text-dark-100 sm:px-[0.9375rem] sm:py-[1.25rem]"
   >
     <div
-      class="sm:hidden flex items-center gap-[1.8925rem] font-medium text-[0.8125rem]"
+      class="flex items-center gap-[1.8925rem] text-[0.8125rem] font-medium sm:hidden"
     >
       <a
         v-for="link in bottomHeaderLinksMobile"
@@ -125,7 +125,7 @@
       >
     </div>
     <div
-      class="hidden sm:flex items-center justify-end gap-12 text-[0.9rem] mx-auto max-w-[74.375rem]"
+      class="mx-auto hidden max-w-[74.375rem] items-center justify-end gap-12 text-[0.9rem] sm:flex"
     >
       <a
         v-for="link in bottomHeaderLinks"
