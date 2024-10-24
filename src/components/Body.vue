@@ -197,10 +197,28 @@
       </div>
 
       <input
-        class="mb-[6.25rem] mt-[1.875rem] w-full rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:text-xl"
+        class="mt-[1.875rem] w-full rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:mb-[6.25rem] sm:text-xl"
         type="button"
         value="Оплатить"
       />
+
+      <div class="mt-[1.25rem] text-xs text-dark-650 sm:hidden">
+        Зачисление до 6 минут
+      </div>
+      <div class="mt-2 text-xs text-dark-650 sm:hidden">
+        Эта платежная система не принимает платежи из стран:
+      </div>
+      <div class="mb-[1.5625rem] mt-[0.125] text-xs text-dark-650 sm:hidden">
+        Армения, Австрия, Азербайджан, Бельгия, Болгария, Кипр, Чешская
+        Республика, Дания, Эстония, Финляндия, Франция, Грузия, Германия,
+        Греция, Венгрия, Исландия, Ирландия, Испания, Италия, Кыргызстан,
+        Латвия, Литва, Люксембург, Мальта, Румыния, Сербия и Черногория,
+        Словакия, Словения, Швеция, Швейцария, Таджикистан, Турция,
+        Туркменистан, Соединенное Королевство, Узбекистан, Австралия, Норвегия,
+        Израиль, Португалия, Нидерланды, Саудовская Аравия, Объединенные
+        Арабские Эмираты, Сингапур, Новая Зеландия, Хорватия, Польша,
+        Бруней-Даруссалам, Перу, Южная Корея, Катар, Египет.
+      </div>
     </div>
   </div>
 </template>
