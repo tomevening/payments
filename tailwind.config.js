@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         dark: {
+          25: '#D8D8D8',
           50: '#CCCCCC',
           100: '#ABABAB',
           200: '#808080',
@@ -35,5 +36,10 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({
+      preferredStrategy: 'pseudoelements',
+      nocompatible: true,
+    }),
+  ],
 };

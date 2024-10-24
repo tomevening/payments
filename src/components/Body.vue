@@ -153,7 +153,7 @@
       </div>
 
       <div
-        class="mt-[0.3125rem] grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-auto sm:h-[13.375rem] sm:grid-cols-5"
+        class="scrollbar-thumb-dark-25 mt-[0.3125rem] grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll scrollbar scrollbar-track-white scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
       >
         <PaymentMethod
           v-for="payment in payments"
