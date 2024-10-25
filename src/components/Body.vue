@@ -105,8 +105,7 @@
         class="mt-[0.625rem] inline-flex flex-col justify-start gap-[0.875rem] sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4"
       >
         <div
-          style="box-shadow: 0px 0px 15px 0px #0000000f"
-          class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"
+          class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"
         >
           <div
             class="absolute right-[0.1875rem] top-[0.1875rem] rounded-full bg-gradient-to-r from-fulvous-600 to-fulvous-300 px-[0.3125rem] py-[0.125rem] text-[0.5625rem] text-white sm:px-[0.375rem] sm:text-[0.625rem]"
@@ -121,8 +120,7 @@
           <div class="text-[0.8125rem] sm:text-sm">Криптовалюты</div>
         </div>
         <div
-          style="box-shadow: 0px 0px 15px 0px #0000000f"
-          class="text-[0.8125rem relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm"
+          class="text-[0.8125rem relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm"
         >
           <div class="flex items-center gap-3 font-medium">
             <img
@@ -153,7 +151,7 @@
       </div>
 
       <div
-        class="scrollbar-thumb-dark-25 mt-[0.3125rem] grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll scrollbar scrollbar-track-white scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
+        class="mt-[0.3125rem] grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
       >
         <PaymentMethod
           v-for="payment in payments"
