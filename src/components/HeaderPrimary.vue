@@ -6,19 +6,6 @@
     { text: 'API', address: 'http://localhost:5173/' },
     { text: 'Временные номера для смс', address: 'http://localhost:5173/' },
   ];
-
-  const bottomHeaderLinks: Link[] = [
-    { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
-    { text: 'Аренда на 20 минут', address: 'http://localhost:5173/' },
-    { text: 'Пригласить друга', address: 'http://localhost:5173/' },
-    { text: 'API', address: 'http://localhost:5173/' },
-    { text: 'Служба поддержки', address: 'http://localhost:5173/' },
-  ];
-
-  const bottomHeaderLinksMobile: Link[] = [
-    { text: 'Купить номер', address: 'http://localhost:5173/' },
-    { text: 'История транзакций', address: 'http://localhost:5173/' },
-  ];
 </script>
 
 <template>
@@ -111,31 +98,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div
-    class="bg-gradient-to-r from-dark-550 to-dark-400 px-[1.9375rem] py-[0.625rem] font-roboto text-dark-100 sm:px-[0.9375rem] sm:py-[1.25rem]"
-  >
-    <div
-      class="flex items-center gap-[1.8925rem] text-[0.8125rem] font-medium sm:hidden"
-    >
-      <a
-        v-for="link in bottomHeaderLinksMobile"
-        :key="link.text"
-        :href="link.address"
-        >{{ link.text }}</a
-      >
-    </div>
-    <div
-      class="mx-auto hidden max-w-[74.375rem] items-center justify-end gap-12 text-[0.9rem] sm:flex"
-    >
-      <a
-        v-for="link in bottomHeaderLinks"
-        :key="link.text"
-        :href="link.address"
-        >{{ link.text }}</a
-      >
     </div>
   </div>
 </template>
