@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { type Link } from '@/types';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
   const bottomHeaderLinks: Link[] = [
     { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
@@ -29,8 +30,8 @@
         >{{ link.text }}</a
       >
     </div>
-    <div
-      class="mx-auto hidden max-w-[74.375rem] items-center justify-end gap-12 text-[0.9rem] sm:flex"
+    <LayoutWidthLimiter
+      class="hidden items-center justify-end gap-12 text-[0.9rem] sm:flex"
     >
       <a
         v-for="link in bottomHeaderLinks"
@@ -38,7 +39,7 @@
         :href="link.address"
         >{{ link.text }}</a
       >
-    </div>
+    </LayoutWidthLimiter>
   </div>
 </template>
 

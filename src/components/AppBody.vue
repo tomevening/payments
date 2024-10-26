@@ -1,28 +1,23 @@
 <script setup lang="ts">
-  import BanalceText from './BanalceText.vue';
+  import BalanceText from './BalanceText.vue';
   import CountriesInfo from './CountriesInfo.vue';
+  import CurrenciesOptions from './CurrenciesOptions.vue';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
   import MobileInfo from './MobileInfo.vue';
   import PaymentMethods from './PaymentMethods.vue';
   import PaymentsOptions from './PaymentsOptions.vue';
-
-  import CurrenciesOptions from './CurrenciesOptions.vue';
 </script>
 
 <template>
-  <div class="px-[0.9375rem] py-[1.5625rem] font-roboto sm:mt-10 sm:px-10">
-    <div class="mx-auto max-w-[74.375rem]">
-      <BanalceText />
-
-      <CurrenciesOptions />
-
-      <PaymentMethods />
-
-      <CountriesInfo />
-
-      <PaymentsOptions />
-
-      <MobileInfo />
-    </div>
+  <div class="mt-[1.5625rem] px-[0.9375rem] font-roboto sm:mt-10">
+    <LayoutWidthLimiter>
+      <BalanceText />
+      <CurrenciesOptions class="mt-[0.9375rem] sm:mt-[1.875rem]" />
+      <PaymentMethods class="mt-[1.25rem] sm:mt-[1.875rem]" />
+      <CountriesInfo class="mt-[0.625rem] sm:mt-[0.9375rem]" />
+      <PaymentsOptions class="mt-[1.25rem] sm:mt-[1.875rem]" />
+      <MobileInfo class="mt-[1.25rem] sm:hidden" />
+    </LayoutWidthLimiter>
   </div>
 </template>
 

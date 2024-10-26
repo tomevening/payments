@@ -1,11 +1,12 @@
 <script setup lang="ts">
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
   import MainSiteBlock from './MainSiteBlock.vue';
 </script>
 
 <template>
   <div class="bg-black px-3 py-6 font-roboto sm:px-[0.3rem]">
-    <div
-      class="mx-auto flex max-w-[74.375rem] flex-col items-start justify-start sm:flex-row sm:items-center sm:justify-between"
+    <LayoutWidthLimiter
+      class="flex flex-col items-start justify-start sm:flex-row sm:items-center sm:justify-between"
     >
       <MainSiteBlock />
 
@@ -35,7 +36,7 @@
           Регистрация
         </a>
       </div>
-    </div>
+    </LayoutWidthLimiter>
     <div class="mt-[0.625rem] flex gap-[1.25rem] text-sm text-white sm:hidden">
       <div class="flex items-center gap-[0.5625rem]">
         Авторизация

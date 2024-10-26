@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { type Link } from '@/types';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
   const topHeaderLinks: Link[] = [
     { text: 'Цены', address: 'http://localhost:5173/' },
@@ -10,9 +11,9 @@
 
 <template>
   <div
-    class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:px-10 sm:py-[0.7175rem]"
+    class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:py-[0.7175rem]"
   >
-    <div class="mx-auto flex max-w-[74.375rem] justify-between">
+    <LayoutWidthLimiter class="flex justify-between">
       <a
         href="http://localhost:5173/"
         class="flex items-center justify-start gap-2 sm:gap-[0.625rem]"
@@ -98,7 +99,7 @@
           </a>
         </div>
       </div>
-    </div>
+    </LayoutWidthLimiter>
   </div>
 </template>
 

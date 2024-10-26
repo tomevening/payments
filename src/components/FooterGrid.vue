@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { Link } from '@/types';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
   const footerLinks: Link[] = [
     { text: 'Цены на номера', address: 'http://localhost:5173/' },
@@ -23,8 +24,8 @@
   <div
     class="bg-black px-[1.3125rem] py-[0.8125rem] text-[0.8rem] font-medium text-dark-100 sm:px-[0.3rem] sm:py-7"
   >
-    <div
-      class="flex flex-col gap-[0.625rem] sm:mx-auto sm:grid sm:max-w-[74.375rem] sm:grid-flow-col sm:grid-rows-4 sm:gap-x-[2.9244rem] sm:gap-y-[0.5937rem]"
+    <LayoutWidthLimiter
+      class="flex flex-col gap-[0.625rem] sm:grid sm:grid-flow-col sm:grid-rows-4 sm:gap-x-[2.9244rem] sm:gap-y-[0.5937rem]"
     >
       <a
         v-for="link in footerLinks"
@@ -32,7 +33,7 @@
         :href="link.address"
         >{{ link.text }}</a
       >
-    </div>
+    </LayoutWidthLimiter>
   </div>
 </template>
 
