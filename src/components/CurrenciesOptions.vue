@@ -1,15 +1,32 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { useElementBounding } from '@vueuse/core';
+  import { ref } from 'vue';
+
+  const el = ref(null);
+  const { x, y, top, right, bottom, left, width, height } =
+    useElementBounding(el);
+</script>
 
 <template>
   <div>
     <div class="flex items-center gap-[0.1875rem] text-sm sm:text-xl">
       <div>Выберите валюту оплаты</div>
-      <div>
+      <button popovertarget="my-popover">
         <img
-          class="ml-[0.5312rem] hidden h-[0.875rem] sm:inline-block"
+          ref="el"
+          class="ml-[0.375rem] hidden size-[0.875rem] sm:inline-block"
           src="/images/Question.svg"
         />
-      </div>
+      </button>
+    </div>
+
+    <div
+      class="fixed inset-0 m-0 mt-[0.875rem] max-w-[15.4375rem] rounded-xl px-2 py-3 text-sm font-medium text-dark-650 shadow-[0_0_20px_0px_rgba(0,0,0,0.08)]"
+      :style="{ top: `${top}px`, left: `${left}px` }"
+      popover
+      id="my-popover"
+    >
+      Тут выбирается способ которым вы будете оплачивать
     </div>
 
     <div
