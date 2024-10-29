@@ -3,7 +3,6 @@
   import CountriesInfo from './CountriesInfo.vue';
   import CurrenciesOptions from './CurrenciesOptions.vue';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
-  import MobileInfo from './MobileInfo.vue';
   import PaymentMethods from './PaymentMethods.vue';
   import PaymentsOptions from './PaymentsOptions.vue';
 </script>
@@ -15,8 +14,9 @@
       <CurrenciesOptions class="mt-[0.9375rem] sm:mt-[1.875rem]" />
       <PaymentMethods class="mt-[1.25rem] sm:mt-[1.875rem]" />
       <CountriesInfo class="mt-[0.625rem] sm:mt-[0.9375rem]" />
-      <PaymentsOptions class="mt-[1.25rem] sm:mt-[1.875rem]" />
-      <MobileInfo class="mt-[1.25rem] sm:hidden" />
+      <PaymentsOptions
+        class="mb-[1.5625rem] mt-[1.25rem] sm:mb-[5rem] sm:mt-[1.875rem]"
+      />
     </LayoutWidthLimiter>
   </div>
 </template>

@@ -28,7 +28,7 @@
     </div>
 
     <input
-      class="mt-[1.875rem] w-full rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:mb-[6.25rem] sm:text-xl"
+      class="mt-[1.875rem] w-full rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:text-xl"
       type="button"
       value="Оплатить"
     />
