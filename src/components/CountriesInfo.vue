@@ -3,7 +3,7 @@
 <template>
   <details class="[&_summary]:open:after:rotate-180">
     <summary
-      class="flex after:ml-[0.375rem] after:mt-1 after:size-[0.875rem] after:bg-[url('/images/downArrow.svg')] after:bg-contain sm:text-sm"
+      class="inline-flex cursor-pointer after:ml-[0.375rem] after:mt-1 after:size-[0.875rem] after:bg-[url('/images/downArrow.svg')] after:bg-contain sm:text-sm"
     >
       <div
         class="flex items-center gap-[0.375rem] text-xs font-medium sm:text-sm"

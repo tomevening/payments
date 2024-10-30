@@ -18,7 +18,7 @@
         ? 'rounded-2xl outline outline-2 outline-fulvous-300'
         : ''
     "
-    class="flex items-center justify-start gap-[0.375rem] rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm sm:gap-3 sm:rounded-xl sm:px-[0.625rem] sm:py-[0.75rem]"
+    class="flex cursor-pointer items-center justify-start gap-[0.375rem] rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm sm:gap-3 sm:rounded-xl sm:px-[0.625rem] sm:py-[0.75rem]"
   >
     <img
       class="w-9 sm:max-h-12 sm:w-12"

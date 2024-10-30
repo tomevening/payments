@@ -30,7 +30,7 @@
     </div>
 
     <div
-      class="mt-[0.625rem] inline-flex flex-col justify-start gap-[0.875rem] sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4"
+      class="mt-[0.625rem] inline-flex cursor-pointer flex-col justify-start gap-[0.875rem] sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4"
     >
       <div
         class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"

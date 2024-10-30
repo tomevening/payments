@@ -38,7 +38,7 @@
       </div>
     </LayoutWidthLimiter>
     <div class="mt-[0.625rem] flex gap-[1.25rem] text-sm text-white sm:hidden">
-      <div class="flex items-center gap-[0.5625rem]">
+      <div class="ml-2 flex items-center gap-[0.5625rem]">
         Авторизация
         <img
           class="h-[0.625rem]"

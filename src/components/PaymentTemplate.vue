@@ -16,7 +16,7 @@
 
 <template>
   <input
-    class="rounded-[0.625rem] border-0 bg-transparent-4 px-3 py-2"
+    class="cursor-pointer rounded-[0.625rem] border-0 bg-transparent-4 px-3 py-2"
     type="button"
     @click="emit('chooseSum', sum)"
     :value="prettierSum"
