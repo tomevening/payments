@@ -1,10 +1,38 @@
 <script setup lang="ts">
+  import { EChosenPayment } from '@/enums';
+  import type { Currency as CurrencyType } from '@/types';
   import { useElementBounding } from '@vueuse/core';
-  import { ref } from 'vue';
+  import { ref, shallowRef } from 'vue';
+  import Currency from './Currency.vue';
 
   const el = ref(null);
-  const { x, y, top, right, bottom, left, width, height } =
-    useElementBounding(el);
+  const { top, left } = useElementBounding(el);
+
+  const emit = defineEmits<{
+    (event: 'choosePayment', chosenPayment: EChosenPayment): void;
+  }>();
+
+  const showCurrencies = shallowRef(false);
+
+  const props = defineProps<{
+    currencies: CurrencyType[];
+  }>();
+
+  function toggleCurrencies() {
+    showCurrencies.value = !showCurrencies.value;
+  }
+
+  function disableCurrencies() {
+    showCurrencies.value = false;
+  }
+
+  const activeCurrency = shallowRef(props.currencies[0]);
+
+  function changeActive(currency: CurrencyType) {
+    activeCurrency.value.isActive = false;
+    currency.isActive = true;
+    activeCurrency.value = currency;
+  }
 </script>
 
 <template>
@@ -33,6 +61,9 @@
       class="mt-[0.625rem] inline-flex cursor-pointer flex-col justify-start gap-[0.875rem] sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4"
     >
       <div
+        @click="
+          emit('choosePayment', EChosenPayment.CRYPTO), disableCurrencies()
+        "
         class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"
       >
         <div
@@ -47,7 +78,10 @@
         />
         <div class="text-[0.8125rem] sm:text-sm">Криптовалюты</div>
       </div>
+      <!-- TODO: From here -->
+
       <div
+        @click="toggleCurrencies()"
         class="text-[0.8125rem relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm"
       >
         <div class="flex items-center gap-3 font-medium">
@@ -65,10 +99,30 @@
           />
           Другие валюты
           <img
+            :class="[showCurrencies ? 'rotate-180' : '']"
             class="h-[1rem] w-[1rem]"
             src="/images/downArrow.svg"
           />
         </div>
+      </div>
+    </div>
+
+    <div
+      @click="emit('choosePayment', EChosenPayment.CASH)"
+      v-if="showCurrencies"
+    >
+      <!-- <div
+        class="grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem] scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
+      > -->
+      <div
+        class="grid max-h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(5.75rem,1fr))] gap-2 overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem] scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-[repeat(auto-fill,minmax(6.9375rem,1fr))]"
+      >
+        <Currency
+          v-for="currency in currencies"
+          :key="currency.name"
+          :currency="currency"
+          @change-active="payment => changeActive(payment)"
+        />
       </div>
     </div>
   </div>
