@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import PaymentMethod from '@/components/PaymentMethod.vue';
+  import VPaymentMethod from '@/components/VPaymentMethod.vue';
   import { type PaymentMethod as PaymentMethodType } from '@/types';
   import { shallowRef, watch, watchEffect, type ShallowRef } from 'vue';
   import { EChosenPayment } from '../enums/chosenPayment';
@@ -44,7 +44,7 @@
     <div
       class="grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem] scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
     >
-      <PaymentMethod
+      <VPaymentMethod
         v-for="payment in currentPaymentsArray"
         :key="payment.name"
         :payment="payment"

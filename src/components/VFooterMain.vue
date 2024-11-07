@@ -1,6 +1,6 @@
 <script setup lang="ts">
+  import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
-  import MainSiteBlock from './MainSiteBlock.vue';
 </script>
 
 <template>
@@ -8,7 +8,7 @@
     <LayoutWidthLimiter
       class="flex flex-col items-start justify-start sm:flex-row sm:items-center sm:justify-between"
     >
-      <MainSiteBlock />
+      <VMainSiteBlock />
 
       <div
         class="hidden items-center justify-end gap-8 text-sm text-white sm:flex"

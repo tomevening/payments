@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import PaymentTemplate from '@/components/PaymentTemplate.vue';
+  import VPaymentTemplate from '@/components/VPaymentTemplate.vue';
   import { ref, type Ref } from 'vue';
   const templates = [1000, 2000, 5000, 10000, 20000, 50000];
   const money: Ref<number | ''> = ref('');
@@ -19,7 +19,7 @@
     <div
       class="mt-[0.625rem] flex items-center justify-start gap-2.5 text-sm font-medium text-transparent-60"
     >
-      <PaymentTemplate
+      <VPaymentTemplate
         v-for="template in templates"
         :key="template"
         :sum="template"

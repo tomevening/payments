@@ -1,15 +1,15 @@
 <script setup lang="ts">
-  import AppBody from '@/components/AppBody.vue';
-  import AppFooter from '@/components/AppFooter.vue';
-  import AppHeader from './components/AppHeader.vue';
+  import VBody from '@/components/VBody.vue';
+  import VFooter from '@/components/VFooter.vue';
+  import VHeader from './components/VHeader.vue';
 
   //TODO: Remove font-size from styles
 </script>
 
 <template>
-  <AppHeader />
-  <AppBody />
-  <AppFooter />
+  <VHeader />
+  <VBody />
+  <VFooter />
 </template>
 
 <style>

@@ -3,7 +3,7 @@
   import type { Currency as CurrencyType } from '@/types';
   import { useElementBounding } from '@vueuse/core';
   import { ref, shallowRef } from 'vue';
-  import Currency from './Currency.vue';
+  import VCurrency from '@/components/VCurrency.vue';
 
   const el = ref(null);
   const { top, left } = useElementBounding(el);
@@ -112,7 +112,7 @@
       <div
         class="grid max-h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(5.75rem,1fr))] gap-2 overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem] scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-[repeat(auto-fill,minmax(6.9375rem,1fr))]"
       >
-        <Currency
+        <VCurrency
           v-for="currency in currencies"
           :key="currency.name"
           :currency="currency"

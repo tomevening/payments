@@ -1,7 +1,7 @@
 <script setup lang="ts">
+  import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
   import { type Link } from '@/types';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
-  import MainSiteBlock from './MainSiteBlock.vue';
 
   const topHeaderLinks: Link[] = [
     { text: 'Цены', address: 'http://localhost:5173/' },
@@ -15,7 +15,7 @@
     class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:py-[0.7175rem]"
   >
     <LayoutWidthLimiter class="flex justify-between">
-      <MainSiteBlock class="mr-4" />
+      <VMainSiteBlock class="mr-4" />
 
       <a
         class="rounded border border-transparent-10 px-[0.8125rem] py-[0.3125rem] sm:hidden"
