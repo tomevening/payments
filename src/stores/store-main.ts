@@ -98,11 +98,10 @@ export const useStoreMain = defineStore('use-store-main', () => {
     },
   ];
 
-  const paymentMethodsArrays: Map<EChosenPayment, PaymentMethodType[]> =
-    new Map([
-      [EChosenPayment.CRYPTO, cryptoPayments],
-      [EChosenPayment.CASH, cashPayments],
-    ]);
+  const paymentMethods: Map<EChosenPayment, PaymentMethodType[]> = new Map([
+    [EChosenPayment.CRYPTO, cryptoPayments],
+    [EChosenPayment.CASH, cashPayments],
+  ]);
 
   const chosenPayment: ShallowRef<EChosenPayment> = shallowRef(
     EChosenPayment.CASH,
@@ -172,7 +171,7 @@ export const useStoreMain = defineStore('use-store-main', () => {
 
   return shallowReadonly({
     chosenPayment,
-    paymentMethodsArrays,
+    paymentMethods,
     changePaymentMethod,
     currencies,
   });

@@ -116,7 +116,7 @@
           v-for="currency in currencies"
           :key="currency.name"
           :currency="currency"
-          @change-active="payment => changeActive(payment)"
+          @change-active="changeActive"
         />
       </div>
     </div>

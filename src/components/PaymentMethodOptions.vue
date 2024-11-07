@@ -2,15 +2,15 @@
   import PaymentMethod from '@/components/PaymentMethod.vue';
   import { type PaymentMethod as PaymentMethodType } from '@/types';
   import { shallowRef, watch, watchEffect, type ShallowRef } from 'vue';
-  import { EChosenPayment } from './../enums/chosenPayment';
+  import { EChosenPayment } from '../enums/chosenPayment';
 
   const props = defineProps<{
     chosenPayment: EChosenPayment;
-    paymentMethodsArrays: Map<EChosenPayment, PaymentMethodType[]>;
+    paymentMethods: Map<EChosenPayment, PaymentMethodType[]>;
   }>();
 
   const currentPaymentsArray: ShallowRef<PaymentMethodType[] | []> = shallowRef(
-    props.paymentMethodsArrays.get(props.chosenPayment) ?? shallowRef([]),
+    props.paymentMethods.get(props.chosenPayment) ?? shallowRef([]),
   );
 
   const activePayment = shallowRef(currentPaymentsArray.value[0]);
@@ -23,13 +23,13 @@
 
   watchEffect(() => {
     currentPaymentsArray.value =
-      props.paymentMethodsArrays.get(props.chosenPayment) ?? [];
+      props.paymentMethods.get(props.chosenPayment) ?? [];
   });
 
   watch(
     () => props.chosenPayment,
     () => {
-      const newActivePayment = props.paymentMethodsArrays.get(
+      const newActivePayment = props.paymentMethods.get(
         props.chosenPayment,
       )![0];
       if (newActivePayment === undefined) return;
