@@ -13,12 +13,6 @@
     props.paymentMethodsArrays.get(props.chosenPayment) ?? shallowRef([]),
   );
 
-  // watchEffect(
-  //   () =>
-  //     (currentPaymentsArray.value =
-  //       props.paymentMethodsArrays.get(props.chosenPayment) ?? []),
-  // );
-
   const activePayment = shallowRef(currentPaymentsArray.value[0]);
 
   function changeActive(payment: PaymentMethodType) {

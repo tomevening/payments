@@ -14,8 +14,8 @@
         class="hidden items-center justify-end gap-8 text-sm text-white sm:flex"
       >
         <a
-          href="http://localhost:5173/"
           class="flex flex-col items-center gap-[0.2275rem] py-2"
+          href="http://localhost:5173/"
         >
           <img
             class="h-[1.3125rem]"
@@ -26,8 +26,8 @@
         <div class="h-[3.8125rem] w-[0.0625rem] bg-dark-200"></div>
 
         <a
-          href="http://localhost:5173/"
           class="flex flex-col items-center gap-[0.2275rem] py-2"
+          href="http://localhost:5173/"
         >
           <img
             class="h-[1.3125rem]"

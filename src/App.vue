@@ -7,15 +7,9 @@
 </script>
 
 <template>
-  <header>
-    <AppHeader />
-  </header>
-  <body>
-    <AppBody />
-  </body>
-  <footer>
-    <AppFooter />
-  </footer>
+  <AppHeader />
+  <AppBody />
+  <AppFooter />
 </template>
 
 <style>

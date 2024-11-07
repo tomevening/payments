@@ -4,8 +4,10 @@
 </script>
 
 <template>
-  <HeaderPrimary />
-  <HeaderSecondary />
+  <header>
+    <HeaderPrimary />
+    <HeaderSecondary />
+  </header>
 </template>
 
 <style lang="scss"></style>

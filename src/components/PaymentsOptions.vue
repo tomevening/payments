@@ -20,10 +20,10 @@
       class="mt-[0.625rem] flex items-center justify-start gap-2.5 text-sm font-medium text-transparent-60"
     >
       <PaymentTemplate
-        :sum="template"
-        @choose-sum="setMoney"
         v-for="template in templates"
         :key="template"
+        :sum="template"
+        @choose-sum="setMoney"
       />
     </div>
 

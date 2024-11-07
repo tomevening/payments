@@ -6,11 +6,13 @@
 </script>
 
 <template>
-  <FooterMain />
-  <FooterDivider />
-  <FooterGrid />
-  <FooterDivider />
-  <FooterSupport />
+  <footer>
+    <FooterMain />
+    <FooterDivider />
+    <FooterGrid />
+    <FooterDivider />
+    <FooterSupport />
+  </footer>
 </template>
 
 <style lang="scss"></style>

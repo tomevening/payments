@@ -29,7 +29,7 @@
     >
       <a
         v-for="link in footerLinks"
-        key="text"
+        :key="link.text"
         :href="link.address"
         >{{ link.text }}</a
       >

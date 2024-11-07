@@ -22,8 +22,8 @@
         href="http://localhost:5173/"
       >
         <img
-          src="/images/menu.svg"
           class="size-[1.875rem]"
+          src="/images/menu.svg"
         />
       </a>
       <div class="sm:justify-left hidden sm:flex sm:items-center sm:gap-4">
@@ -32,7 +32,7 @@
         >
           <a
             v-for="link in topHeaderLinks"
-            key="text"
+            :key="link.text"
             :href="link.address"
             >{{ link.text }}</a
           >
@@ -42,8 +42,8 @@
           class="flex items-center justify-center font-sans text-[0.8125rem] text-neutral-400"
         >
           <a
-            href="http://localhost:5173/"
             class="mx-4 flex flex-col items-center gap-[2px]"
+            href="http://localhost:5173/"
           >
             <img
               class="h-[1.22rem]"
@@ -53,8 +53,8 @@
           </a>
 
           <a
-            href="http://localhost:5173/"
             class="mx-4 flex flex-col items-center gap-[2px]"
+            href="http://localhost:5173/"
           >
             <img
               class="h-[1.22rem]"
@@ -63,8 +63,8 @@
             Регистрация
           </a>
           <a
-            href="http://localhost:5173/"
             class="flex items-center justify-center gap-2 rounded-[0.3125rem] bg-zinc-500 px-2 py-3"
+            href="http://localhost:5173/"
           >
             <img
               class="h-4"
