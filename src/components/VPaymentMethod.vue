@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import type { PaymentMethod } from '@/types';
+  import type { TPaymentMethod } from '@/types';
 
   defineProps<{
-    payment: PaymentMethod;
+    payment: TPaymentMethod;
   }>();
 
   const emit = defineEmits<{
-    (event: 'changeActive', payment: PaymentMethod): void;
+    (event: 'changeActive', payment: TPaymentMethod): void;
   }>();
 </script>
 

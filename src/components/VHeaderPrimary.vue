@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
-  import { type Link } from '@/types';
+  import { type TLink } from '@/types';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
-  const topHeaderLinks: Link[] = [
+  const topHeaderLinks: TLink[] = [
     { text: 'Цены', address: 'http://localhost:5173/' },
     { text: 'API', address: 'http://localhost:5173/' },
     { text: 'Временные номера для смс', address: 'http://localhost:5173/' },

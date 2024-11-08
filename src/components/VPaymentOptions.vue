@@ -1,21 +1,21 @@
 <script setup lang="ts">
   import VPaymentMethod from '@/components/VPaymentMethod.vue';
-  import { type PaymentMethod as PaymentMethodType } from '@/types';
+  import { type TPaymentMethod } from '@/types';
   import { shallowRef, watch, watchEffect, type ShallowRef } from 'vue';
   import { EChosenPayment } from '../enums/chosenPayment';
 
   const props = defineProps<{
     chosenPayment: EChosenPayment;
-    paymentMethods: Map<EChosenPayment, PaymentMethodType[]>;
+    paymentMethods: Map<EChosenPayment, TPaymentMethod[]>;
   }>();
 
-  const currentPaymentsArray: ShallowRef<PaymentMethodType[] | []> = shallowRef(
+  const currentPaymentsArray: ShallowRef<TPaymentMethod[] | []> = shallowRef(
     props.paymentMethods.get(props.chosenPayment) ?? shallowRef([]),
   );
 
   const activePayment = shallowRef(currentPaymentsArray.value[0]);
 
-  function changeActive(payment: PaymentMethodType) {
+  function changeActive(payment: TPaymentMethod) {
     activePayment.value.isActive = false;
     payment.isActive = true;
     activePayment.value = payment;

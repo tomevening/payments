@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import type { Currency } from '@/types';
+  import type { TCurrency } from '@/types';
 
   defineProps<{
-    currency: Currency;
+    currency: TCurrency;
   }>();
 
   const emit = defineEmits<{
-    (event: 'changeActive', currency: Currency): void;
+    (event: 'changeActive', currency: TCurrency): void;
   }>();
 </script>
 

@@ -1,13 +1,10 @@
-import {
-  type Currency,
-  type PaymentMethod as PaymentMethodType,
-} from '@/types';
+import { type TCurrency, type TPaymentMethod } from '@/types';
 import { defineStore } from 'pinia';
 import { shallowReadonly, shallowRef, type ShallowRef } from 'vue';
 import { EChosenPayment } from './../enums/chosenPayment';
 
 export const useStoreMain = defineStore('use-store-main', () => {
-  const cashPayments: PaymentMethodType[] = [
+  const cashPayments: TPaymentMethod[] = [
     {
       name: 'Картой РФ',
       srcIcon: '/images/payments/RUCard.png',
@@ -90,7 +87,7 @@ export const useStoreMain = defineStore('use-store-main', () => {
     },
   ];
 
-  const cryptoPayments: PaymentMethodType[] = [
+  const cryptoPayments: TPaymentMethod[] = [
     {
       name: 'Cryptomus',
       srcIcon: '/images/payments/Cryptomus.png',
@@ -98,7 +95,7 @@ export const useStoreMain = defineStore('use-store-main', () => {
     },
   ];
 
-  const paymentMethods: Map<EChosenPayment, PaymentMethodType[]> = new Map([
+  const paymentMethods: Map<EChosenPayment, TPaymentMethod[]> = new Map([
     [EChosenPayment.CRYPTO, cryptoPayments],
     [EChosenPayment.CASH, cashPayments],
   ]);
@@ -111,7 +108,7 @@ export const useStoreMain = defineStore('use-store-main', () => {
     chosenPayment.value = newMethod;
   }
 
-  const currencies: Currency[] = [
+  const currencies: TCurrency[] = [
     {
       name: 'RUB',
       srcIcon: '/images/flagRound.svg',

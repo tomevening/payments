@@ -1,9 +1,9 @@
 <script setup lang="ts">
+  import VCurrency from '@/components/VCurrency.vue';
   import { EChosenPayment } from '@/enums';
-  import type { Currency as CurrencyType } from '@/types';
+  import type { TCurrency } from '@/types';
   import { useElementBounding } from '@vueuse/core';
   import { ref, shallowRef } from 'vue';
-  import VCurrency from '@/components/VCurrency.vue';
 
   const el = ref(null);
   const { top, left } = useElementBounding(el);
@@ -15,7 +15,7 @@
   const showCurrencies = shallowRef(false);
 
   const props = defineProps<{
-    currencies: CurrencyType[];
+    currencies: TCurrency[];
   }>();
 
   function toggleCurrencies() {
@@ -28,7 +28,7 @@
 
   const activeCurrency = shallowRef(props.currencies[0]);
 
-  function changeActive(currency: CurrencyType) {
+  function changeActive(currency: TCurrency) {
     activeCurrency.value.isActive = false;
     currency.isActive = true;
     activeCurrency.value = currency;

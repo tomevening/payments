@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { type Link } from '@/types';
+  import { type TLink } from '@/types';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
-  const bottomHeaderLinks: Link[] = [
+  const bottomHeaderLinks: TLink[] = [
     { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
     { text: 'Аренда на 20 минут', address: 'http://localhost:5173/' },
     { text: 'Пригласить друга', address: 'http://localhost:5173/' },
@@ -10,7 +10,7 @@
     { text: 'Служба поддержки', address: 'http://localhost:5173/' },
   ];
 
-  const bottomHeaderLinksMobile: Link[] = [
+  const bottomHeaderLinksMobile: TLink[] = [
     { text: 'Купить номер', address: 'http://localhost:5173/' },
     { text: 'История транзакций', address: 'http://localhost:5173/' },
   ];

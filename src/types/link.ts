@@ -1,4 +1,4 @@
-export type Link = {
+export type TLink = {
   text: string;
   address: string;
 };

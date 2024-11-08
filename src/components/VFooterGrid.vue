@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import type { Link } from '@/types';
-  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+  import type { TLink } from '@/types';
+import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
-  const footerLinks: Link[] = [
+  const footerLinks: TLink[] = [
     { text: 'Цены на номера', address: 'http://localhost:5173/' },
     { text: 'Скидки на номера', address: 'http://localhost:5173/' },
     { text: 'Долгосрочная аренда', address: 'http://localhost:5173/' },
