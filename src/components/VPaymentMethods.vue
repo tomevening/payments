@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import VPaymentMethod from '@/components/VPaymentMethod.vue';
+  import type { ECurrency } from '@/enums';
   import { type TPaymentMethod } from '@/types';
   import { shallowRef, watch, watchEffect, type ShallowRef } from 'vue';
-  import { EChosenPayment } from '../enums/chosenPayment';
 
   const props = defineProps<{
-    chosenPayment: EChosenPayment;
-    paymentMethods: Map<EChosenPayment, TPaymentMethod[]>;
+    chosenPayment: ECurrency;
+    paymentMethods: Map<ECurrency, TPaymentMethod[]>;
   }>();
 
   const currentPaymentsArray: ShallowRef<TPaymentMethod[] | []> = shallowRef(

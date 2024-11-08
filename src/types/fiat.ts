@@ -1,4 +1,4 @@
-export type TCurrency = {
+export type TFiat = {
   name: string;
   srcIcon: string;
   isActive: boolean;

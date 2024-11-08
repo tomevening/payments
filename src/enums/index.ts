@@ -1,1 +1,1 @@
-export * from './chosenPayment';
+export * from './currency';

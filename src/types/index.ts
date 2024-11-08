@@ -1,3 +1,3 @@
-export * from './currency';
+export * from './fiat';
 export * from './link';
 export * from './payment-method';

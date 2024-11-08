@@ -2,9 +2,9 @@
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
   import VBalanceText from './VBalanceText.vue';
   import VCountriesInfo from './VCountriesInfo.vue';
-  import VCurrenciesOptions from './VCurrenciesOptions.vue';
-  import VPaymentOptions from './VPaymentOptions.vue';
-  import VPaymentsOptions from './VPaymentsOptions.vue';
+  import VFiatOptions from './VFiatOptions.vue';
+  import VPaymentOptions from './VPaymentMethods.vue';
+  import VPaymentsOptions from './VPaymentTemplates.vue';
 
   import { useStoreMain } from '@/stores';
 
@@ -15,9 +15,9 @@
   <body class="mt-[1.5625rem] px-[0.9375rem] font-roboto sm:mt-10">
     <LayoutWidthLimiter>
       <VBalanceText />
-      <VCurrenciesOptions
+      <VFiatOptions
         class="mt-[0.9375rem] sm:mt-[1.875rem]"
-        :currencies="storeMain.currencies"
+        :fiats="storeMain.fiats"
         @choose-payment="storeMain.changePaymentMethod"
       />
       <VPaymentOptions
