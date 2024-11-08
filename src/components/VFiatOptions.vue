@@ -22,7 +22,7 @@
     showFiats.value = !showFiats.value;
   }
 
-  function disableFiats() {
+  function hideFiats() {
     showFiats.value = false;
   }
 
@@ -62,7 +62,7 @@
     >
       <div
         class="relative flex h-3 max-w-max items-center gap-[0.5rem] rounded-xl px-[1.375rem] py-[1.5rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)] sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4"
-        @click="emit('choosePayment', ECurrency.CRYPTO), disableFiats()"
+        @click="emit('choosePayment', ECurrency.CRYPTO), hideFiats()"
       >
         <div
           class="absolute right-[0.1875rem] top-[0.1875rem] rounded-full bg-gradient-to-r from-fulvous-600 to-fulvous-300 px-[0.3125rem] py-[0.125rem] text-[0.5625rem] text-white sm:px-[0.375rem] sm:text-[0.625rem]"
@@ -71,7 +71,7 @@
         </div>
 
         <img
-          class="h-6 w-6"
+          class="size-6"
           src="/images/Bitcoin.svg"
         />
         <div class="text-[0.8125rem] sm:text-sm">Криптовалюты</div>
@@ -90,12 +90,12 @@
         <div class="h-10 w-[0.0625rem] bg-transparent-10 sm:h-[3.25rem]"></div>
         <div class="flex items-center gap-[0.75rem]">
           <img
-            class="h-6 w-6"
+            class="size-6"
             src="/images/otherCurrency.svg"
           />
           Другие валюты
           <img
-            class="h-[1rem] w-[1rem]"
+            class="size-4"
             :class="[showFiats ? 'rotate-180' : '']"
             src="/images/downArrow.svg"
           />

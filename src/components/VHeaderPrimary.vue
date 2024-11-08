@@ -71,7 +71,7 @@
               src="/images/flag.svg"
             />
             <div class="text-white">RU</div>
-            <div class="h-2 w-2 bg-white"></div>
+            <div class="size-2 bg-white"></div>
           </a>
         </div>
       </div>
