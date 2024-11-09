@@ -2,7 +2,7 @@
   import { type TLink } from '@/types';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
-  const bottomHeaderLinks: TLink[] = [
+  const bottomHeaderLinksPC: TLink[] = [
     { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
     { text: 'Аренда на 20 минут', address: 'http://localhost:5173/' },
     { text: 'Пригласить друга', address: 'http://localhost:5173/' },
@@ -38,7 +38,7 @@
       class="hidden items-center justify-end gap-12 text-[0.9rem] sm:flex"
     >
       <a
-        v-for="link in bottomHeaderLinks"
+        v-for="link in bottomHeaderLinksPC"
         :key="link.text"
         :href="link.address"
         >{{ link.text }}</a
