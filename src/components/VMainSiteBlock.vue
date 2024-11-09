@@ -22,7 +22,10 @@
         class="hidden h-[1.875rem] w-[0.0625rem] bg-gray-400 sm:mr-1 sm:block"
       ></div>
       <div
-        class="font-roboto text-[0.55rem] tracking-[0.071rem] text-white sm:max-w-[6.7625rem] sm:text-[0.625rem] sm:tracking-[0.0781rem]"
+        :class="[
+          'font-roboto text-[0.55rem] tracking-[0.071rem] text-white',
+          'sm:max-w-[6.7625rem] sm:text-[0.625rem] sm:tracking-[0.0781rem]',
+        ]"
       >
         АРЕНДА НОМЕРА ДЛЯ ПРИЕМА СМС
       </div>

@@ -42,7 +42,13 @@
   <div>
     <div class="text-sm sm:text-xl">Выберите способ оплаты</div>
     <div
-      class="grid h-[10.6875rem] grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4 overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem] scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem] sm:h-[13.375rem] sm:grid-cols-5"
+      class=" "
+      :class="[
+        'grid grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4',
+        'scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem]',
+        'h-[10.6875rem] overflow-y-scroll px-[0.25rem] pb-[0.25rem] pt-[0.3125rem]',
+        'sm:h-[13.375rem] sm:grid-cols-5',
+      ]"
     >
       <VPaymentMethod
         v-for="payment in currentPaymentsArray"

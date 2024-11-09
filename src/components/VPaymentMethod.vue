@@ -12,12 +12,13 @@
 
 <template>
   <div
-    class="flex h-min cursor-pointer items-center justify-start gap-[0.375rem] rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm sm:gap-3 sm:rounded-xl sm:px-5 sm:py-[0.75rem]"
-    :class="
-      payment.isActive
-        ? 'rounded-2xl outline outline-2 outline-fulvous-300'
-        : ''
-    "
+    class=" "
+    :class="[
+      { 'rounded-2xl outline outline-2 outline-fulvous-300': payment.isActive },
+      'flex items-center justify-start gap-[0.375rem]',
+      'h-min cursor-pointer rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm',
+      'sm:gap-3 sm:rounded-xl sm:px-5 sm:py-[0.75rem]',
+    ]"
     @click.prevent="emit('changeActive', payment)"
   >
     <img

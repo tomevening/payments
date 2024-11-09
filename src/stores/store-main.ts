@@ -1,7 +1,7 @@
 import { ECurrency } from '@/enums';
 import { type TFiat, type TPaymentMethod } from '@/types';
 import { defineStore } from 'pinia';
-import { shallowReadonly, shallowRef, type ShallowRef } from 'vue';
+import { shallowRef, type ShallowRef } from 'vue';
 
 export const useStoreMain = defineStore('use-store-main', () => {
   const cashPayments: TPaymentMethod[] = [
@@ -164,10 +164,10 @@ export const useStoreMain = defineStore('use-store-main', () => {
     },
   ];
 
-  return shallowReadonly({
+  return {
     chosenPayment,
     paymentMethods,
     changePaymentMethod,
     fiats,
-  });
+  };
 });

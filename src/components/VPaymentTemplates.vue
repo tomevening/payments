@@ -13,7 +13,11 @@
     <div class="text-sm text-dark-650 sm:text-xl">Укажите сумму платежа</div>
     <input
       v-model="money"
-      class="mt-[0.625rem] w-full rounded-lg border border-transparent-10 p-4 sm:mt-[0.9375rem] sm:rounded-xl sm:px-[1.25rem] sm:py-4"
+      class=""
+      :class="[
+        'mt-[0.625rem] w-full rounded-lg border border-transparent-10 p-4',
+        'sm:mt-[0.9375rem] sm:rounded-xl sm:px-[1.25rem] sm:py-4',
+      ]"
       placeholder="Минимальная сумма платежа: 1.000₽"
     />
     <div
@@ -28,7 +32,12 @@
     </div>
 
     <input
-      class="mt-[1.875rem] w-full cursor-pointer rounded-xl border-0 bg-gradient-to-r from-fulvous-600 to-fulvous-300 py-5 text-lg font-medium text-white sm:text-xl"
+      class=""
+      :class="[
+        'bg-gradient-to-r from-fulvous-600 to-fulvous-300',
+        'mt-[1.875rem] w-full cursor-pointer rounded-xl border-0 py-5 text-lg font-medium text-white',
+        'sm:text-xl',
+      ]"
       type="button"
       value="Оплатить"
     />

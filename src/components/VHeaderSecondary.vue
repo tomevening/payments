@@ -18,7 +18,11 @@
 
 <template>
   <div
-    class="bg-gradient-to-r from-dark-550 to-dark-400 px-[1.9375rem] py-[0.625rem] font-roboto text-dark-100 sm:px-[0.9375rem] sm:py-[1.25rem]"
+    :class="[
+      'bg-gradient-to-r from-dark-550 to-dark-400',
+      'px-[1.9375rem] py-[0.625rem] font-roboto text-dark-100',
+      'sm:px-[0.9375rem] sm:py-[1.25rem]',
+    ]"
   >
     <div
       class="flex items-center gap-[1.8925rem] text-[0.8125rem] font-medium sm:hidden"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { TLink } from '@/types';
-import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
   const footerLinks: TLink[] = [
     { text: 'Цены на номера', address: 'http://localhost:5173/' },
@@ -22,10 +22,16 @@ import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 
 <template>
   <div
-    class="bg-black px-[1.3125rem] py-[0.8125rem] text-[0.8rem] font-medium text-dark-100 sm:px-[0.3rem] sm:py-7"
+    :class="[
+      'bg-black px-[1.3125rem] py-[0.8125rem] text-[0.8rem] font-medium text-dark-100',
+      'sm:px-[0.3rem] sm:py-7',
+    ]"
   >
     <LayoutWidthLimiter
-      class="flex flex-col gap-[0.625rem] sm:grid sm:grid-flow-col sm:grid-rows-4 sm:gap-x-[2.9244rem] sm:gap-y-[0.5937rem]"
+      :class="[
+        'flex flex-col gap-[0.625rem]',
+        'sm:grid sm:grid-flow-col sm:grid-rows-4 sm:gap-x-[2.9244rem] sm:gap-y-[0.5937rem]',
+      ]"
     >
       <a
         v-for="link in footerLinks"

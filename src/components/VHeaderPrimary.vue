@@ -12,7 +12,10 @@
 
 <template>
   <div
-    class="bg-gradient-to-r from-dark-900 to-dark-600 py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:py-[0.7175rem]"
+    :class="[
+      'bg-gradient-to-r from-dark-900 to-dark-600',
+      'py-[0.5625rem] pl-[0.5rem] pr-[0.9375rem] sm:py-[0.7175rem]',
+    ]"
   >
     <LayoutWidthLimiter class="flex justify-between">
       <VMainSiteBlock class="mr-4" />
