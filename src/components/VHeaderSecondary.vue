@@ -1,7 +1,4 @@
-<script setup lang="ts">
-  import { type TLink } from '@/types';
-  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
-
+<script lang="ts">
   const bottomHeaderLinksPC: TLink[] = [
     { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
     { text: 'Аренда на 20 минут', address: 'http://localhost:5173/' },
@@ -14,6 +11,11 @@
     { text: 'Купить номер', address: 'http://localhost:5173/' },
     { text: 'История транзакций', address: 'http://localhost:5173/' },
   ];
+</script>
+
+<script setup lang="ts">
+  import { type TLink } from '@/types';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>

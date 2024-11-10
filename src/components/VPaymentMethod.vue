@@ -6,7 +6,7 @@
   }>();
 
   const emit = defineEmits<{
-    (event: 'changeActive', payment: TPaymentMethod): void;
+    (event: 'change-active', payment: TPaymentMethod): void;
   }>();
 </script>
 
@@ -19,7 +19,7 @@
       'h-min cursor-pointer rounded-lg border-0 px-[0.9375rem] py-[0.625rem] shadow-sm',
       'sm:gap-3 sm:rounded-xl sm:px-5 sm:py-[0.75rem]',
     ]"
-    @click.prevent="emit('changeActive', payment)"
+    @click="emit('change-active', payment)"
   >
     <img
       class="max-w-9 sm:max-h-12 sm:max-w-12"

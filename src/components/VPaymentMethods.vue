@@ -2,40 +2,36 @@
   import VPaymentMethod from '@/components/VPaymentMethod.vue';
   import type { ECurrency } from '@/enums';
   import { type TPaymentMethod } from '@/types';
-  import { shallowRef, watch, watchEffect, type ShallowRef } from 'vue';
+  import { computed, shallowRef, watch, type ShallowRef } from 'vue';
 
   const props = defineProps<{
     chosenPayment: ECurrency;
     paymentMethods: Map<ECurrency, TPaymentMethod[]>;
   }>();
 
-  const currentPaymentsArray: ShallowRef<TPaymentMethod[] | []> = shallowRef(
-    props.paymentMethods.get(props.chosenPayment) ?? shallowRef([]),
+  const paymentsToShow = computed(() =>
+    props.paymentMethods.get(props.chosenPayment),
   );
 
-  const activePayment = shallowRef(currentPaymentsArray.value[0]);
-
-  function changeActive(payment: TPaymentMethod) {
-    activePayment.value.isActive = false;
-    payment.isActive = true;
-    activePayment.value = payment;
-  }
-
-  watchEffect(() => {
-    currentPaymentsArray.value =
-      props.paymentMethods.get(props.chosenPayment) ?? [];
-  });
+  const currentlyActivePayment: ShallowRef<TPaymentMethod | null> =
+    shallowRef(null);
 
   watch(
     () => props.chosenPayment,
     () => {
-      const newActivePayment = props.paymentMethods.get(
-        props.chosenPayment,
-      )![0];
-      if (newActivePayment === undefined) return;
-      changeActive(newActivePayment);
+      const activeArray = props.paymentMethods.get(props.chosenPayment);
+      if (activeArray === undefined) return;
+      changeActive(activeArray[0]);
     },
+    { immediate: true },
   );
+
+  function changeActive(payment: TPaymentMethod) {
+    if (currentlyActivePayment.value)
+      currentlyActivePayment.value.isActive = false;
+    payment.isActive = true;
+    currentlyActivePayment.value = payment;
+  }
 </script>
 
 <template>
@@ -51,11 +47,17 @@
       ]"
     >
       <VPaymentMethod
-        v-for="payment in currentPaymentsArray"
+        v-for="payment in paymentsToShow"
         :key="payment.name"
         :payment="payment"
         @change-active="payment => changeActive(payment)"
       />
+      <!-- <VPaymentMethod
+        v-for="payment in currentPaymentsArray"
+        :key="payment.name"
+        :payment="payment"
+        @change-active="payment => changeActive(payment)"
+      /> -->
     </div>
   </div>
 </template>

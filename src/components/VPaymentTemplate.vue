@@ -2,15 +2,15 @@
   import { computed } from 'vue';
 
   const props = defineProps<{
-    sum: number;
+    money: number;
   }>();
 
   const emit = defineEmits<{
-    (event: 'chooseSum', sum: number): void;
+    (event: 'choose-amount', amount: number): void;
   }>();
 
-  const prettierSum = computed(() => {
-    return new Intl.NumberFormat('de').format(props.sum) + '₽';
+  const formattedMoney = computed(() => {
+    return new Intl.NumberFormat('de').format(props.money) + '₽';
   });
 </script>
 
@@ -18,8 +18,8 @@
   <input
     class="cursor-pointer rounded-[0.625rem] border-0 bg-transparent-4 px-3 py-2"
     type="button"
-    :value="prettierSum"
-    @click="emit('chooseSum', sum)"
+    :value="formattedMoney"
+    @click="emit('choose-amount', money)"
   />
 </template>
 

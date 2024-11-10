@@ -1,10 +1,15 @@
+<script lang="ts">
+  const templates = [1000, 2000, 5000, 10000, 20000, 50000];
+</script>
+
 <script setup lang="ts">
   import VPaymentTemplate from '@/components/VPaymentTemplate.vue';
-  import { ref, type Ref } from 'vue';
-  const templates = [1000, 2000, 5000, 10000, 20000, 50000];
-  const money: Ref<number | ''> = ref('');
-  function setMoney(amount: number) {
-    money.value = amount;
+  import { ref } from 'vue';
+
+  const inputMoney = ref<number | ''>('');
+
+  function setPaymentAmount(newAmount: number) {
+    inputMoney.value = newAmount;
   }
 </script>
 
@@ -12,13 +17,14 @@
   <div>
     <div class="text-sm text-dark-650 sm:text-xl">Укажите сумму платежа</div>
     <input
-      v-model="money"
+      v-model="inputMoney"
       class=""
       :class="[
         'mt-[0.625rem] w-full rounded-lg border border-transparent-10 p-4',
         'sm:mt-[0.9375rem] sm:rounded-xl sm:px-[1.25rem] sm:py-4',
       ]"
       placeholder="Минимальная сумма платежа: 1.000₽"
+      type="number"
     />
     <div
       class="mt-[0.625rem] flex items-center justify-start gap-2.5 text-sm font-medium text-transparent-60"
@@ -26,8 +32,8 @@
       <VPaymentTemplate
         v-for="template in templates"
         :key="template"
-        :sum="template"
-        @choose-sum="setMoney"
+        :money="template"
+        @choose-amount="setPaymentAmount"
       />
     </div>
 

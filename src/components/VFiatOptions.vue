@@ -9,26 +9,28 @@
   const { top, left } = useElementBounding(el);
 
   const emit = defineEmits<{
-    (event: 'choosePayment', chosenPayment: ECurrency): void;
+    (event: 'choose-payment', chosenPayment: ECurrency): void;
   }>();
-
-  const showFiats = shallowRef(false);
 
   const props = defineProps<{
     fiats: TFiat[];
   }>();
 
+  const activeFiat = shallowRef(props.fiats[0]);
+  const showFiats = shallowRef(false);
+
   function toggleFiats() {
     showFiats.value = !showFiats.value;
+    if (showFiats.value === true) {
+      changeActiveFiat(props.fiats[0]);
+    }
   }
 
   function hideFiats() {
     showFiats.value = false;
   }
 
-  const activeFiat = shallowRef(props.fiats[0]);
-
-  function changeActive(fiat: TFiat) {
+  function changeActiveFiat(fiat: TFiat) {
     activeFiat.value.isActive = false;
     fiat.isActive = true;
     activeFiat.value = fiat;
@@ -73,7 +75,10 @@
           'flex items-center gap-[0.5rem]',
           'sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4',
         ]"
-        @click="emit('choosePayment', ECurrency.CRYPTO), hideFiats()"
+        @click="
+          emit('choose-payment', ECurrency.CRYPTO);
+          hideFiats();
+        "
       >
         <div
           :class="[
@@ -98,14 +103,17 @@
           'rounded-xl px-[1.375rem] py-[1.5rem] text-[0.8125rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)]',
           'sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm',
         ]"
-        @click="toggleFiats()"
+        @click="
+          toggleFiats();
+          emit('choose-payment', ECurrency.CASH);
+        "
       >
         <div class="flex items-center gap-3 font-medium">
           <img
             class="size-[1.75rem]"
-            src="/images/flagRound.svg"
+            :src="activeFiat.srcIcon"
           />
-          RUB
+          {{ activeFiat.name }}
         </div>
         <div class="h-10 w-[0.0625rem] bg-transparent-10 sm:h-[3.25rem]"></div>
         <div class="flex items-center gap-[0.75rem]">
@@ -123,10 +131,7 @@
       </div>
     </div>
 
-    <div
-      v-if="showFiats"
-      @click="emit('choosePayment', ECurrency.CASH)"
-    >
+    <div v-if="showFiats">
       <div
         class=""
         :class="[
@@ -139,7 +144,7 @@
           v-for="fiat in fiats"
           :key="fiat.name"
           :fiat="fiat"
-          @change-active="changeActive"
+          @change-active="changeActiveFiat"
         />
       </div>
     </div>

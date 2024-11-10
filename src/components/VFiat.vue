@@ -6,7 +6,7 @@
   }>();
 
   const emit = defineEmits<{
-    (event: 'changeActive', fiat: TFiat): void;
+    (event: 'change-active', fiat: TFiat): void;
   }>();
 </script>
 
@@ -18,7 +18,7 @@
       'sm:gap-3 sm:rounded-2xl sm:py-[0.9375rem] sm:pl-5 sm:pr-6',
       { 'rounded-2xl outline outline-2 outline-fulvous-300': fiat.isActive },
     ]"
-    @click.prevent="emit('changeActive', fiat)"
+    @click="emit('change-active', fiat)"
   >
     <img
       class="size-6 sm:size-7"
