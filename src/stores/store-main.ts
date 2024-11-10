@@ -1,8 +1,8 @@
 import {
   cashPayments,
   cryptoPayments,
-  fiats as fetchedFiats,
-  footerLinks as fetchedFooterLinks,
+  fiats as fiatsConstant,
+  footerLinks as footerLinksConstant,
 } from '@/constants';
 import { ECurrency } from '@/enums';
 import { type TPaymentMethod } from '@/types';
@@ -10,22 +10,22 @@ import { defineStore } from 'pinia';
 import { shallowRef, type ShallowRef } from 'vue';
 
 export const useStoreMain = defineStore('use-store-main', () => {
-  function fetchCashPayments() {
+  function getCashPayments() {
     return cashPayments;
   }
-  function fetchCryptoPayments() {
+  function getCryptoPayments() {
     return cryptoPayments;
   }
-  function fetchFiats() {
-    return fetchedFiats;
+  function getFiats() {
+    return fiatsConstant;
   }
-  function fetchFooterLinks() {
-    return fetchedFooterLinks;
+  function getFooterLinks() {
+    return footerLinksConstant;
   }
 
   const paymentMethods: Map<ECurrency, TPaymentMethod[]> = new Map([
-    [ECurrency.CRYPTO, fetchCryptoPayments()],
-    [ECurrency.CASH, fetchCashPayments()],
+    [ECurrency.CRYPTO, getCryptoPayments()],
+    [ECurrency.CASH, getCashPayments()],
   ]);
 
   const chosenPayment: ShallowRef<ECurrency> = shallowRef(ECurrency.CASH);
@@ -34,8 +34,8 @@ export const useStoreMain = defineStore('use-store-main', () => {
     chosenPayment.value = newMethod;
   }
 
-  const fiats = fetchFiats();
-  const footerLinks = fetchFooterLinks();
+  const fiats = getFiats();
+  const footerLinks = getFooterLinks();
 
   return {
     chosenPayment,
