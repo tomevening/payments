@@ -5,7 +5,7 @@ import {
   footerLinks as footerLinksConstant,
 } from '@/constants';
 import { ECurrency } from '@/enums';
-import { type TPaymentMethod } from '@/types';
+import { type TFiat, type TPaymentMethod } from '@/types';
 import { defineStore } from 'pinia';
 import { shallowRef } from 'vue';
 
@@ -23,6 +23,8 @@ export const useStoreMain = defineStore('use-store-main', () => {
     return footerLinksConstant;
   }
 
+  const footerLinks = getFooterLinks();
+
   const paymentMethods: Map<ECurrency, TPaymentMethod[]> = new Map([
     [ECurrency.CRYPTO, getCryptoPayments()],
     [ECurrency.CASH, getCashPayments()],
@@ -35,7 +37,8 @@ export const useStoreMain = defineStore('use-store-main', () => {
   }
 
   const fiats = getFiats();
-  const footerLinks = getFooterLinks();
+
+  const chosenFiat = shallowRef<TFiat>(fiats[0]);
 
   return {
     chosenPaymentMethod,
@@ -43,5 +46,6 @@ export const useStoreMain = defineStore('use-store-main', () => {
     setPaymentMethod,
     fiats,
     footerLinks,
+    chosenFiat,
   };
 });
