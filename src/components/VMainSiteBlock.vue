@@ -3,7 +3,7 @@
 <template>
   <a
     class="flex items-center justify-start gap-2 sm:gap-[0.625rem]"
-    href="http://localhost:5173/"
+    href="./"
   >
     <img
       class="size-8"
@@ -14,7 +14,7 @@
     >
       <div
         class="font-roboto text-[1rem] font-medium tracking-[0.175rem] text-white"
-        href="http://localhost:5173/"
+        href="./"
       >
         SMS SERVICE
       </div>

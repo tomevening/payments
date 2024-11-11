@@ -7,7 +7,7 @@ import {
 import { ECurrency } from '@/enums';
 import { type TPaymentMethod } from '@/types';
 import { defineStore } from 'pinia';
-import { shallowRef, type ShallowRef } from 'vue';
+import { shallowRef } from 'vue';
 
 export const useStoreMain = defineStore('use-store-main', () => {
   function getCashPayments() {
@@ -28,19 +28,19 @@ export const useStoreMain = defineStore('use-store-main', () => {
     [ECurrency.CASH, getCashPayments()],
   ]);
 
-  const chosenPayment: ShallowRef<ECurrency> = shallowRef(ECurrency.CASH);
+  const chosenPaymentMethod = shallowRef<ECurrency>(ECurrency.CASH);
 
-  function changePaymentMethod(newMethod: ECurrency) {
-    chosenPayment.value = newMethod;
+  function setPaymentMethod(newMethod: ECurrency) {
+    chosenPaymentMethod.value = newMethod;
   }
 
   const fiats = getFiats();
   const footerLinks = getFooterLinks();
 
   return {
-    chosenPayment,
+    chosenPaymentMethod,
     paymentMethods,
-    changePaymentMethod,
+    setPaymentMethod,
     fiats,
     footerLinks,
   };

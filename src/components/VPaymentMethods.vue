@@ -5,21 +5,21 @@
   import { computed, shallowRef, watch, type ShallowRef } from 'vue';
 
   const props = defineProps<{
-    chosenPayment: ECurrency;
+    chosenPaymentMethod: ECurrency;
     paymentMethods: Map<ECurrency, TPaymentMethod[]>;
   }>();
 
   const paymentsToShow = computed(() =>
-    props.paymentMethods.get(props.chosenPayment),
+    props.paymentMethods.get(props.chosenPaymentMethod),
   );
 
   const currentlyActivePayment: ShallowRef<TPaymentMethod | null> =
     shallowRef(null);
 
   watch(
-    () => props.chosenPayment,
+    () => props.chosenPaymentMethod,
     () => {
-      const activeArray = props.paymentMethods.get(props.chosenPayment);
+      const activeArray = props.paymentMethods.get(props.chosenPaymentMethod);
       if (activeArray === undefined) return;
       changeActive(activeArray[0]);
     },

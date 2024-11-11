@@ -1,15 +1,15 @@
 <script lang="ts">
   const topHeaderLinks: TLink[] = [
-    { text: 'Цены', address: 'http://localhost:5173/' },
-    { text: 'API', address: 'http://localhost:5173/' },
-    { text: 'Временные номера для смс', address: 'http://localhost:5173/' },
+    { text: 'Цены', address: './' },
+    { text: 'API', address: './' },
+    { text: 'Временные номера для смс', address: './' },
   ];
 </script>
 
 <script setup lang="ts">
   import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
-  import { type TLink } from '@/types';
-  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+import { type TLink } from '@/types';
+import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>
@@ -24,7 +24,7 @@
 
       <a
         class="rounded border border-transparent-10 px-[0.8125rem] py-[0.3125rem] sm:hidden"
-        href="http://localhost:5173/"
+        href="./"
       >
         <img
           class="size-[1.875rem]"
@@ -48,7 +48,7 @@
         >
           <a
             class="mx-4 flex flex-col items-center gap-[2px]"
-            href="http://localhost:5173/"
+            href="./"
           >
             <img
               class="h-[1.22rem]"
@@ -59,7 +59,7 @@
 
           <a
             class="mx-4 flex flex-col items-center gap-[2px]"
-            href="http://localhost:5173/"
+            href="./"
           >
             <img
               class="h-[1.22rem]"
@@ -69,7 +69,7 @@
           </a>
           <a
             class="flex items-center justify-center gap-2 rounded-[0.3125rem] bg-zinc-500 px-2 py-3"
-            href="http://localhost:5173/"
+            href="./"
           >
             <img
               class="h-4"

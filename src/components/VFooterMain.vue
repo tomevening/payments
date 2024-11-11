@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
-  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>
@@ -15,7 +15,7 @@
       >
         <a
           class="flex flex-col items-center gap-[0.2275rem] py-2"
-          href="http://localhost:5173/"
+          href="./"
         >
           <img
             class="h-[1.3125rem]"
@@ -27,7 +27,7 @@
 
         <a
           class="flex flex-col items-center gap-[0.2275rem] py-2"
-          href="http://localhost:5173/"
+          href="./"
         >
           <img
             class="h-[1.3125rem]"

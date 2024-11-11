@@ -9,7 +9,7 @@
   const { top, left } = useElementBounding(el);
 
   const emit = defineEmits<{
-    (event: 'choose-payment', chosenPayment: ECurrency): void;
+    (event: 'choose-payment', chosenPaymentMethod: ECurrency): void;
   }>();
 
   const props = defineProps<{
@@ -113,7 +113,9 @@
             class="size-[1.75rem]"
             :src="activeFiat.srcIcon"
           />
-          {{ activeFiat.name }}
+          <div class="w-[2.375rem]">
+            {{ activeFiat.name }}
+          </div>
         </div>
         <div class="h-10 w-[0.0625rem] bg-transparent-10 sm:h-[3.25rem]"></div>
         <div class="flex items-center gap-[0.75rem]">

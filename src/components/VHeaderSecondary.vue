@@ -1,21 +1,21 @@
 <script lang="ts">
   const bottomHeaderLinksPC: TLink[] = [
-    { text: 'Аренда номеров от 1 дня', address: 'http://localhost:5173/' },
-    { text: 'Аренда на 20 минут', address: 'http://localhost:5173/' },
-    { text: 'Пригласить друга', address: 'http://localhost:5173/' },
-    { text: 'API', address: 'http://localhost:5173/' },
-    { text: 'Служба поддержки', address: 'http://localhost:5173/' },
+    { text: 'Аренда номеров от 1 дня', address: './' },
+    { text: 'Аренда на 20 минут', address: './' },
+    { text: 'Пригласить друга', address: './' },
+    { text: 'API', address: './' },
+    { text: 'Служба поддержки', address: './' },
   ];
 
   const bottomHeaderLinksMobile: TLink[] = [
-    { text: 'Купить номер', address: 'http://localhost:5173/' },
-    { text: 'История транзакций', address: 'http://localhost:5173/' },
+    { text: 'Купить номер', address: './' },
+    { text: 'История транзакций', address: './' },
   ];
 </script>
 
 <script setup lang="ts">
   import { type TLink } from '@/types';
-  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>
