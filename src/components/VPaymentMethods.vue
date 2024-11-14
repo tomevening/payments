@@ -1,44 +1,50 @@
 <script setup lang="ts">
   import VPaymentMethod from '@/components/VPaymentMethod.vue';
-  import type { ECurrency } from '@/enums';
+  import { ECurrency } from '@/enums';
   import { type TPaymentMethod } from '@/types';
-  import { computed, shallowRef, watch, type ShallowRef } from 'vue';
+  import { computed, shallowRef, watchEffect } from 'vue';
 
   const props = defineProps<{
-    chosenPaymentMethod: ECurrency;
+    chosenPaymentApproach: ECurrency;
+
     paymentMethods: Map<ECurrency, TPaymentMethod[]>;
   }>();
 
   const paymentsToShow = computed(() =>
-    props.paymentMethods.get(props.chosenPaymentMethod),
+    props.paymentMethods.get(props.chosenPaymentApproach),
   );
 
-  const currentlyActivePayment: ShallowRef<TPaymentMethod | null> =
-    shallowRef(null);
+  const activePayment = shallowRef<TPaymentMethod | null>(null);
 
-  watch(
-    () => props.chosenPaymentMethod,
-    () => {
-      const activeArray = props.paymentMethods.get(props.chosenPaymentMethod);
-      if (activeArray === undefined) return;
-      changeActive(activeArray[0]);
-    },
-    { immediate: true },
-  );
+  const emit = defineEmits<{
+    (event: 'update-chosen-payment', chosenPayment: TPaymentMethod): void;
+  }>();
+
+  watchEffect(() => {
+    const defaultPaymentMethod = props.paymentMethods.get(
+      props.chosenPaymentApproach,
+    );
+
+    if (!defaultPaymentMethod) return;
+
+    activePayment.value = defaultPaymentMethod[0];
+  });
 
   function changeActive(payment: TPaymentMethod) {
-    if (currentlyActivePayment.value)
-      currentlyActivePayment.value.isActive = false;
-    payment.isActive = true;
-    currentlyActivePayment.value = payment;
+    if (!payment) return;
+    activePayment.value = payment;
+    emit('update-chosen-payment', payment);
   }
+  watchEffect(() => {
+    if (activePayment.value !== null)
+      emit('update-chosen-payment', activePayment.value);
+  });
 </script>
 
 <template>
   <div>
     <div class="text-sm sm:text-xl">Выберите способ оплаты</div>
     <div
-      class=" "
       :class="[
         'grid grid-cols-[repeat(auto-fill,minmax(8.8125rem,1fr))] gap-4',
         'scrollbar scrollbar-track-white scrollbar-thumb-dark-25 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem]',
@@ -49,15 +55,13 @@
       <VPaymentMethod
         v-for="payment in paymentsToShow"
         :key="payment.name"
+        :class="{
+          'rounded-2xl outline outline-2 outline-fulvous-300':
+            payment === activePayment,
+        }"
         :payment="payment"
-        @change-active="payment => changeActive(payment)"
+        @change-active="changeActive"
       />
-      <!-- <VPaymentMethod
-        v-for="payment in currentPaymentsArray"
-        :key="payment.name"
-        :payment="payment"
-        @change-active="payment => changeActive(payment)"
-      /> -->
     </div>
   </div>
 </template>

@@ -4,56 +4,56 @@ export const fiats: TFiat[] = [
   {
     name: 'RUB',
     srcIcon: '/images/fiats/RUB.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'USD',
     srcIcon: '/images/fiats/USD.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'EUR',
     srcIcon: '/images/fiats/EUR.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'BYN',
     srcIcon: '/images/fiats/BYN.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'KZT',
     srcIcon: '/images/fiats/KZT.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'AZN',
     srcIcon: '/images/fiats/AZN.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'UZS',
     srcIcon: '/images/fiats/UZS.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'UAH',
     srcIcon: '/images/fiats/UAH.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'KRW',
     srcIcon: '/images/fiats/KRW.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'INR',
     srcIcon: '/images/fiats/INR.svg',
-    isActive: false,
+    // isActive: false,
   },
   {
     name: 'IDR',
     srcIcon: '/images/fiats/IDR.svg',
-    isActive: false,
+    // isActive: false,
   },
 ];

@@ -16,7 +16,6 @@
       'flex items-center justify-start gap-2',
       'h-min cursor-pointer rounded-xl border-0 py-[0.625rem] pl-4 pr-[1.3125rem] shadow-sm',
       'sm:gap-3 sm:rounded-2xl sm:py-[0.9375rem] sm:pl-5 sm:pr-6',
-      { 'rounded-2xl outline outline-2 outline-fulvous-300': fiat.isActive },
     ]"
     @click="emit('change-active', fiat)"
   >

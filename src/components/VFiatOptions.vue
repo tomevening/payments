@@ -3,37 +3,53 @@
   import { ECurrency } from '@/enums';
   import type { TFiat } from '@/types';
   import { useElementBounding } from '@vueuse/core';
-  import { ref, shallowRef } from 'vue';
+  import { ref, shallowRef, watchEffect } from 'vue';
 
   const el = ref(null);
   const { top, left } = useElementBounding(el);
-
-  const emit = defineEmits<{
-    (event: 'choose-payment', chosenPaymentMethod: ECurrency): void;
-  }>();
 
   const props = defineProps<{
     fiats: TFiat[];
   }>();
 
-  const activeFiat = shallowRef(props.fiats[0]);
-  const showFiats = shallowRef(false);
+  const fiatChosen = shallowRef<TFiat>(props.fiats[0]);
+  const approachChosen = shallowRef<ECurrency>(ECurrency.CASH);
 
-  function toggleFiats() {
-    showFiats.value = !showFiats.value;
-    if (showFiats.value === true) {
-      changeActiveFiat(props.fiats[0]);
-    }
+  function switchToFiats() {
+    toggleFiats();
+
+    approachChosen.value = ECurrency.CASH;
   }
+
+  function switchToCrypto() {
+    hideFiats();
+    approachChosen.value = ECurrency.CRYPTO;
+  }
+
+  const showFiats = shallowRef(false);
 
   function hideFiats() {
     showFiats.value = false;
   }
 
-  function changeActiveFiat(fiat: TFiat) {
-    activeFiat.value.isActive = false;
-    fiat.isActive = true;
-    activeFiat.value = fiat;
+  function toggleFiats() {
+    showFiats.value = !showFiats.value;
+  }
+
+  const emit = defineEmits<{
+    (
+      event: 'update-fiat-options',
+      chosenApproach: ECurrency,
+      chosenFiat: TFiat | null,
+    ): void;
+  }>();
+
+  watchEffect(() =>
+    emit('update-fiat-options', approachChosen.value, fiatChosen.value),
+  );
+
+  function changeActive(fiat: TFiat) {
+    fiatChosen.value = fiat;
   }
 </script>
 
@@ -68,6 +84,7 @@
         'sm:mt-[0.9375rem] sm:flex-row sm:items-center sm:gap-4',
       ]"
     >
+      <!-- Crypto button -->
       <div
         class=""
         :class="[
@@ -75,10 +92,7 @@
           'flex items-center gap-[0.5rem]',
           'sm:h-[4.25rem] sm:gap-[0.625rem] sm:rounded-2xl sm:px-6 sm:py-4',
         ]"
-        @click="
-          emit('choose-payment', ECurrency.CRYPTO);
-          hideFiats();
-        "
+        @click="switchToCrypto"
       >
         <div
           :class="[
@@ -96,25 +110,23 @@
         />
         <div class="text-[0.8125rem] sm:text-sm">Криптовалюты</div>
       </div>
+
+      <!-- Fiats button -->
       <div
-        class=""
         :class="[
           'relative flex h-3 max-w-max items-center gap-[0.5rem]',
           'rounded-xl px-[1.375rem] py-[1.5rem] text-[0.8125rem] leading-none shadow-[0_0_15px_0px_rgba(0,0,0,0.06)]',
           'sm:h-[4.25rem] sm:gap-[1.25rem] sm:rounded-2xl sm:px-6 sm:py-4 sm:text-sm',
         ]"
-        @click="
-          toggleFiats();
-          emit('choose-payment', ECurrency.CASH);
-        "
+        @click="switchToFiats"
       >
         <div class="flex items-center gap-3 font-medium">
           <img
             class="size-[1.75rem]"
-            :src="activeFiat.srcIcon"
+            :src="fiatChosen.srcIcon"
           />
           <div class="w-[2.375rem]">
-            {{ activeFiat.name }}
+            {{ fiatChosen.name }}
           </div>
         </div>
         <div class="h-10 w-[0.0625rem] bg-transparent-10 sm:h-[3.25rem]"></div>
@@ -133,6 +145,7 @@
       </div>
     </div>
 
+    <!-- Fiats -->
     <div v-if="showFiats">
       <div
         class=""
@@ -145,8 +158,12 @@
         <VFiat
           v-for="fiat in fiats"
           :key="fiat.name"
+          :class="{
+            'rounded-2xl outline outline-2 outline-fulvous-300':
+              fiat === fiatChosen,
+          }"
           :fiat="fiat"
-          @change-active="changeActiveFiat"
+          @change-active="changeActive"
         />
       </div>
     </div>

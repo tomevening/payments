@@ -30,20 +30,18 @@ export const useStoreMain = defineStore('use-store-main', () => {
     [ECurrency.CASH, getCashPayments()],
   ]);
 
-  const chosenPaymentMethod = shallowRef<ECurrency>(ECurrency.CASH);
+  const chosenPaymentApproach = shallowRef<ECurrency>(ECurrency.CASH);
 
-  function setPaymentMethod(newMethod: ECurrency) {
-    chosenPaymentMethod.value = newMethod;
-  }
+  const chosenPaymentMethod = shallowRef<TPaymentMethod | null>(null);
 
   const fiats = getFiats();
 
   const chosenFiat = shallowRef<TFiat>(fiats[0]);
 
   return {
-    chosenPaymentMethod,
+    chosenPaymentApproach,
     paymentMethods,
-    setPaymentMethod,
+    chosenPaymentMethod,
     fiats,
     footerLinks,
     chosenFiat,

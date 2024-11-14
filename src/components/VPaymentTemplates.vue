@@ -11,6 +11,18 @@
   function setPaymentAmount(newAmount: number) {
     inputMoney.value = newAmount;
   }
+
+  const emit = defineEmits<{
+    (event: 'confirm-payment', paymentAmount: number): void;
+  }>();
+
+  function confirmPayment(paymentAmount: number | '') {
+    if (paymentAmount === '') {
+      console.log('Choose how much money you wish to send');
+      return;
+    }
+    emit('confirm-payment', paymentAmount);
+  }
 </script>
 
 <template>
@@ -46,6 +58,7 @@
       ]"
       type="button"
       value="Оплатить"
+      @click="confirmPayment(inputMoney)"
     />
   </div>
 </template>
