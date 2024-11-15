@@ -4,24 +4,22 @@
 
 <script setup lang="ts">
   import VPaymentTemplate from '@/components/VPaymentTemplate.vue';
-  import { ref } from 'vue';
+  import { ref, watchEffect } from 'vue';
+
+  const emit = defineEmits<{
+    (event: 'payment-amount-changed', paymentAmount: number): void;
+  }>();
 
   const inputMoney = ref<number | ''>('');
 
+  watchEffect(() => {
+    let paymentAmount = inputMoney.value;
+    if (paymentAmount === '') paymentAmount = 0;
+    emit('payment-amount-changed', paymentAmount);
+  });
+
   function setPaymentAmount(newAmount: number) {
     inputMoney.value = newAmount;
-  }
-
-  const emit = defineEmits<{
-    (event: 'confirm-payment', paymentAmount: number): void;
-  }>();
-
-  function confirmPayment(paymentAmount: number | '') {
-    if (paymentAmount === '') {
-      console.log('Choose how much money you wish to send');
-      return;
-    }
-    emit('confirm-payment', paymentAmount);
   }
 </script>
 
@@ -48,18 +46,6 @@
         @choose-amount="setPaymentAmount"
       />
     </div>
-
-    <input
-      class=""
-      :class="[
-        'bg-gradient-to-r from-fulvous-600 to-fulvous-300',
-        'mt-[1.875rem] w-full cursor-pointer rounded-xl border-0 py-5 text-lg font-medium text-white',
-        'sm:text-xl',
-      ]"
-      type="button"
-      value="Оплатить"
-      @click="confirmPayment(inputMoney)"
-    />
   </div>
 </template>
 

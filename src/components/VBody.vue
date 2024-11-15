@@ -5,6 +5,7 @@
   import { computed, shallowReactive, type ShallowReactive } from 'vue';
   import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
   import VBalanceText from './VBalanceText.vue';
+  import VButtonSubmit from './VButtonSubmit.vue';
   import VCountriesInfo from './VCountriesInfo.vue';
   import VFiatOptions from './VFiatOptions.vue';
   import VPaymentMethods from './VPaymentMethods.vue';
@@ -39,7 +40,29 @@
 
   function setMoneyAmount(amount: number) {
     paymentDetails.amount = amount;
-    console.log(paymentDetails);
+  }
+
+  function confirmPayment() {
+    if (paymentDetails.amount === null) {
+      alert('Please choose a sum');
+      return;
+    }
+    if (paymentDetails.amount <= 0) {
+      alert('Please choose positive number as sum');
+      return;
+    }
+    if (paymentDetails.approach === ECurrency.CRYPTO) {
+      alert(
+        `Payment accepted. \n \nChosen payment method: ${paymentDetails.paymentMethod?.name}. Chosen sum: ${paymentDetails.amount} roubles`,
+      );
+      return;
+    }
+    if (paymentDetails.approach === ECurrency.CASH) {
+      alert(
+        `Payment accepted. \n \nChosen fiat: ${paymentDetails.fiat?.name}. Chosen payment method: ${paymentDetails.paymentMethod?.name}. Chosen sum: ${paymentDetails.amount} roubles`,
+      );
+      return;
+    }
   }
 </script>
 
@@ -60,8 +83,12 @@
       />
       <VCountriesInfo class="mt-[0.625rem] sm:mt-[0.9375rem]" />
       <VPaymentTemplates
-        class="mb-[1.5625rem] mt-[1.25rem] sm:mb-[5rem] sm:mt-[1.875rem]"
-        @confirm-payment="setMoneyAmount"
+        class="mt-[1.25rem] sm:mt-[1.875rem]"
+        @payment-amount-changed="setMoneyAmount"
+      />
+      <VButtonSubmit
+        class="mb-[1.5625rem] sm:mb-[5rem]"
+        @confirm-payment="confirmPayment"
       />
     </LayoutWidthLimiter>
   </main>
