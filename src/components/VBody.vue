@@ -14,7 +14,6 @@
 
   type TPaymentDetails = ShallowReactive<{
     paymentMethod: TPaymentMethod | null;
-
     approach: ECurrency;
     fiat: TFiat | null;
     amount: number | null;
@@ -22,7 +21,6 @@
 
   const paymentDetails: TPaymentDetails = shallowReactive({
     paymentMethod: null,
-
     approach: ECurrency.CRYPTO,
     fiat: null,
     amount: null,
