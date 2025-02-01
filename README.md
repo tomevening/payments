@@ -1,39 +1,59 @@
-# payments
+# Pixel-Perfect Recreation of a Payment Webpage
 
-This template should help get you started developing with Vue 3 in Vite.
+## Demo video
 
-## Recommended IDE Setup
+[![Demo Video](https://img.youtube.com/vi/TobiBGACExY/0.jpg)](https://youtu.be/TobiBGACExY)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Overview
 
-## Type Support for `.vue` Imports in TS
+This project is a pixel-perfect recreation of a payment webpage designed in
+Figma, utilizing Tailwind CSS for styling. The application allows users to
+select their preferred payment method, either cryptocurrency or traditional
+currency, and submit their payment details.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Features
 
-## Customize configuration
+### **Payment Method Selection**
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Users can choose between cryptocurrency and digital money.
 
-## Project Setup
+### **Cryptocurrency**
 
-```sh
-npm install
-```
+Users can select from various cryptocurrencies.
 
-### Compile and Hot-Reload for Development
+### **Digital Money**
 
-```sh
-npm run dev
-```
+Users can choose their preferred currency (USD, EUR, etc.) and payment method
+(Visa, PayPal, etc.).
 
-### Type-Check, Compile and Minify for Production
+### **Responsive Design**
 
-```sh
-npm run build
-```
+The application is fully responsive and works well across various screen sizes.
 
-### Lint with [ESLint](https://eslint.org/)
+### **Icons and Tooltips**
 
-```sh
-npm run lint
-```
+Payment types are represented with icons, and tooltips provide additional
+information when relevant buttons are pressed.
+
+## Technical Details
+
+### **Technologies Used**
+
+- Vue
+- Vite
+- TypeScript
+- Tailwind CSS
+- Pinia
+- Tailwind Scrollbar
+
+### **Design Considerations**:
+
+The project aims for pixel-perfect accuracy based on the Figma design. However,
+due to some design inconsistencies (e.g., decimal paddings), slight adjustments
+were made for optimization. The layout utilizes Flexbox for better positioning
+and responsiveness.
+
+## License
+
+This project is licensed under the MIT License - see the [License](LICENSE) file
+for details.

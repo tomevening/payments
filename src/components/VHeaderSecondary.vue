@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
   import { type TLink } from '@/types';
-import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>

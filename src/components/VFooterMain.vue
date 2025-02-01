@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
-import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>

@@ -8,8 +8,8 @@
 
 <script setup lang="ts">
   import VMainSiteBlock from '@/components/VMainSiteBlock.vue';
-import { type TLink } from '@/types';
-import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
+  import { type TLink } from '@/types';
+  import LayoutWidthLimiter from './LayoutWidthLimiter.vue';
 </script>
 
 <template>

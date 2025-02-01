@@ -2,14 +2,6 @@
   const emit = defineEmits<{
     (event: 'confirm-payment'): void;
   }>();
-
-  // function confirmPayment() {
-  //   if (paymentAmount === '') {
-  //     console.log('Choose how much money you wish to send');
-  //     return;
-  //   }
-  //   emit('confirm-payment', paymentAmount);
-  // }
 </script>
 
 <template>
